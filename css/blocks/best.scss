@@ -1,0 +1,32 @@
+
+.best {background: url(./../images/best_bg.jpg) center center / cover no-repeat;
+  }
+  
+  .best__list { display: flex;
+    margin-top: 50px;
+    margin-right: 35px;
+    justify-content: space-between;
+    &:last-child {margin-right: 0;}
+  }
+
+  .best__item {max-width: 31%; 
+   text-align: center;
+    color: $gray;
+    font-family: 'ubuntu';
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0.8;
+    line-height: 1.4em;
+  }
+
+  .best__icon {max-width: 95px;
+  max-height: 89px; margin-bottom: 34px;
+  }
+  
+  .best__name {
+    margin-bottom: 30px;
+    font-family: 'lifehack';
+    font-size: 24px;
+  }
+  

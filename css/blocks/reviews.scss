@@ -1,0 +1,27 @@
+.reviews__list {height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.reviews__item {position: relative; width: 25%; height: 50%;
+background: center center /cover no-repeat;
+filter: grayscale(1);
+
+&:hover 
+ .reviews__hover {opacity: 1;}
+}
+.reviews__hover {overflow: hidden; position: absolute;
+  top: 0;left: 0;right: 0;bottom: 0;
+color: white;
+background: rgba(#1f1f1f, 0.5);
+font-family: 'ubuntu', sans-serif, Arial, Helvetica, sans-serif;
+font-size: 14px;font-weight: 300; line-height: 2;
+padding-left: 20px;
+opacity: 0;
+transition: 0.4s;
+}
+
+.reviews__user-name {text-transform: uppercase;
+font-family: 'gagalin';
+margin-bottom: 25px;
+}

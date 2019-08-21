@@ -1,0 +1,24 @@
+
+$orange: #e45028;
+$yellow: #f9b43b;
+$gray: #2f3234;
+$red: #c1401e;
+
+
+@import "./layout/normalize.scss";
+@import "./layout/fonts.scss";
+@import "./layout/layout.scss";
+@import "./blocks/page.scss";
+@import "./blocks/main-sect.scss";
+@import "./blocks/header.scss";
+@import "./blocks/logo.scss";
+@import "./blocks/menu.scss";
+@import "./blocks/btn.scss";
+@import "./blocks/main-page.scss";
+@import "./blocks/title.scss";
+@import "./blocks/pagination.scss";
+@import "./blocks/best.scss";
+@import "./blocks/burger.scss";
+@import "./blocks/scroll-down.scss";
+@import "./blocks/reviews.scss";
+

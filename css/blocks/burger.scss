@@ -1,0 +1,33 @@
+.burger {
+  background: linear-gradient(to bottom, #f9b43b, #eb8d38 50%, #f9b43b 85%);
+background-repeat: no-repeat;
+}
+.burger-page {display: flex; justify-content: space-around;
+  align-items: center;
+}
+
+.burger-page__img {max-width: 505px;
+  max-height: 329px;
+}
+.burger-page__text {color: #fff;
+  margin-top: 45px;
+  font-family: 'ubuntu';
+  font-weight: 300;
+  font-size: 14px;
+}
+.burger-page__order {margin-top: 35px;
+  display: flex; align-items: baseline;
+}
+.burger-page__price {font-family: 'gagalin';
+  font-size: 72px;
+  text-transform: uppercase;
+  color: #e35028;
+
+}
+.burger-page__rub {font-family: 'gagalin';
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #e35028;
+  margin-left: 8px;
+  margin-right: 20px;
+}

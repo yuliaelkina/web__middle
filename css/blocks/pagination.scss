@@ -1,0 +1,29 @@
+.pagination {position: fixed;
+  z-index: 5;
+ right: 10px;
+ top: 95px;
+ }
+
+ .pagination__point {
+  display: block;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
+  margin-bottom: 15px;
+}
+
+.pagination__point--active {
+  position: relative;
+
+&::before {content: "";
+display: block;
+position: absolute;
+border: 1px solid #fff;
+background-color: transparent;
+height: 16px;
+width: 16px;
+border-radius: 50%;
+top: 0;left: 0; right: 0;bottom: 0;
+transform: translate(-35%, -35%);}
+}
