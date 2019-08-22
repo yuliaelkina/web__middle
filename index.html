@@ -23,10 +23,11 @@
       <li class="pagination__point"></li>
     </ul>
     </aside>
+
     <section class="page main-sect">
       <div class="container container__main-page">
         <header class="header">
-          <img src="./images/logo.png" alt="logo mr burger" class="logo">
+          <a href="/index.html" class="logo__link"><img src="./images/logo.png" alt="logo mr burger" class="logo"></a>
           <nav class="menu">
             <ul class="menu__list">
               <li class="menu__item"><a href="#" class="menu__link">О нас</a></li>
@@ -46,9 +47,8 @@
           <h1 class="main-page__desc">натуральные бургеры</h1></div>
         </div> 
         <button type="button" class="scroll-down"></div>
-      </div> 
-      
     </section>
+
     <section class="page best">
       <div class="container">
       <h2 class="title title--best">мы лучшие</h2>
@@ -71,6 +71,7 @@
       </ul>
     </div>
     </section>
+
     <section class="page burger">
         <div class="container">
        <div class="burger-page">
@@ -88,6 +89,7 @@
        </div>
       </div>
       </section>
+
       <section class="page reviews">
         
           <ul class="reviews__list">
@@ -166,7 +168,85 @@
           </ul>
         
       </section>
-  
+
+      <section class="page order">
+<div class="container">
+  <h2 class="title title--order">Закажите доставку</h2>
+  <div class="form">
+    <form action="" class="form__elem">
+      <div class="form__column">
+        <div class="form__row">
+          <label class="form__block">
+            <div class="form__block-title">Имя</div>
+            <input type="text" class="form__input">
+          </label>
+          <label class="form__block">
+            <div class="form__block-title">Телефон</div>
+            <input type="text" class="form__input" placeholder="89219453212">
+          </label>
+        </div>
+        <div class="form__row">
+          <label class="form__block">
+            <div class="form__block-title">Улица</div>
+            <input type="text" class="form__input">
+          </label>
+        </div>
+        <div class="form__row">
+          <label class="form__block">
+            <div class="form__block-title">Дом</div>
+            <input type="text" class="form__input">
+          </label>
+          <label class="form__block">
+            <div class="form__block-title">Корпус</div>
+            <input type="text" class="form__input">
+          </label>
+          <label class="form__block">
+            <div class="form__block-title">Квартира</div>
+            <input type="text" class="form__input">
+          </label>
+          <label class="form__block">
+            <div class="form__block-title">Этаж</div>
+            <input type="text" class="form__input">
+          </label>
+        </div>
+      </div>
+      <div class="form__column">
+        <div class="form__row">
+          <label class="form__block">
+            <div class="form__block-title">Комментарий</div>
+            <textarea class="form__input form__input--textarea" placeholder="Ваши пожелания"></textarea>
+          </label>
+        </div>
+        <div class="form__row">
+          <label class="form__lbl">
+            <input type="radio" class="form__radio-btn" name="payment">
+            <span class="form__radio-custom"></span>
+            <span class="form__radio-name">Потребуется сдача</span>
+           </label>
+           <label class="form__lbl">
+            <input type="radio" class="form__radio-btn" name="payment">
+            <span class="form__radio-custom"></span>
+            <span class="form__radio-name">Оплата по карте</span>
+           </label>
+        </div>
+        <div class="form__row">
+          <label class="form__lbl">
+            <input type="checkbox" class="form__checkbox">
+            <span class="form__checkbox-custom"></span>
+            <span class="form__checkbox-name">Не перезванивать</span>
+           </label>
+        </div>
+        <div class="form__row">
+          <button type="button" class="btn">Заказать</button>
+          <button type="button" class="btn btn-clear">Очистить</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+      </section>
+   
   </div>
 </body>
 </html>

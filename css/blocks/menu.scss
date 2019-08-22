@@ -1,16 +1,18 @@
-.menu__list {margin-left: 60px;
+.menu__list {margin-left: auto;
   display: flex;
   height: 100%;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  margin-right: 15px;
 }
 
 .menu__item {margin-right: 15px;
 
+&:last-child {margin-right: 0;}
 &::after {content: "";
   display: inline-block;
-  margin-bottom: 3px;
+  vertical-align: middle;
   width: 4px;
   height: 4px;
   margin-left: 15px;
