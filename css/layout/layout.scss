@@ -1,13 +1,30 @@
-html, body {height: 100%;}
+html {font-size: 16px;
+
+@include tablets {
+  font-size: 15px;
+}
+
+@include phones {
+  font-size: 14px;
+}
+
+}
+html, body {height: 100%;
+}
 
 button {outline: none;
+background: transparent;
+border: none;
+cursor: pointer;
 }
 
 .wrapper {position: relative;
   width: 100%;
-  min-width: 940px+20px;
   min-height: 100%;
   overflow: hidden;
+  font-family: 'ubuntu', sans-serif, Arial, Helvetica, sans-serif;
+font-size: rem(14px);
+font-weight: 300; 
 }
 
 ul {margin-left: 0;
@@ -20,14 +37,14 @@ li {list-style: none;
 
 .container {margin: 0 auto; display: flex;
   flex-direction: column;
-  width: 940px;
+  width: 95%;
+  max-width: rem(940px);
 }
 
+.container--team {width: 75%;
+  height: 100%;
+  justify-content: center;
+}
 
 * {box-sizing: border-box;
-}
-
-button {background: transparent;
-border: none;
-cursor: pointer;
 }

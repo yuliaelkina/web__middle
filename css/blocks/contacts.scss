@@ -1,0 +1,19 @@
+.contacts {color: #fff;
+  padding-top: rem(10px);
+  padding-bottom: rem(12px);
+}
+
+.contacts__call {
+  font-weight: 700;
+  text-decoration: none;
+  color: $red;
+
+&::before {content: ""; display: inline-block;
+  height: rem(12px);
+  width: rem(11px);
+  background: url(./../images/phone.png) center center no-repeat;
+  background-size: contain;
+  margin-right: rem(8px);
+
+} 
+}

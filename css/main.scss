@@ -6,13 +6,19 @@ $red: #c1401e;
 
 
 @import "./layout/normalize.scss";
+
+
+@import "./media.scss";
+
 @import "./layout/fonts.scss";
 @import "./layout/layout.scss";
+
 @import "./blocks/page.scss";
 @import "./blocks/main-sect.scss";
 @import "./blocks/header.scss";
 @import "./blocks/logo.scss";
 @import "./blocks/menu.scss";
+@import "./blocks/hamburger-menu.scss";
 @import "./blocks/btn.scss";
 @import "./blocks/main-page.scss";
 @import "./blocks/title.scss";
@@ -20,8 +26,12 @@ $red: #c1401e;
 @import "./blocks/best.scss";
 @import "./blocks/burger.scss";
 @import "./blocks/scroll-down.scss";
+@import "./blocks/team.scss";
+@import "./blocks/menu-page.scss";
 @import "./blocks/reviews.scss";
+@import "./blocks/work.scss";
 @import "./blocks/order.scss";
 @import "./blocks/form.scss";
-
+@import "./blocks/footer.scss";
+@import "./blocks/contacts.scss";
 

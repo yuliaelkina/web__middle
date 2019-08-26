@@ -7,40 +7,40 @@
   
 
 }
-.form__column {width: 50%; margin-right: 20px;
+.form__column {width: 50%; margin-right: rem(20px);
   &:last-child {margin-right: 0;}
 }
 
 .form__row {display: flex;
 }
 
-.form__block {flex: 1; margin-right: 20px;
+.form__block {flex: 1; margin-right: rem(20px);
   &:last-child {margin-right: 0;}
 }
-.form__block-title {margin-bottom: 9px;}
+.form__block-title {margin-bottom: rem(9px);}
 .form__input {
-  padding: 9px 20px;
+  padding: rem(9px) rem(20px);
   outline: none;
   background: #fff;
-  border-radius: 4px;
-  border: #fff 2px solid;
-  margin-bottom: 20px;
+  border-radius: rem(4px);
+  border: #fff rem(2px) solid;
+  margin-bottom: rem(20px);
   width: 100%;
   color: $gray;
 
   
 &--textarea {resize: none;
-  height: 110px;
+  height: rem(110px);
   }
 
 &:focus {
-  border: $yellow 2px solid;
+  border: $yellow rem(2px) solid;
   }
 }
 
 .form__lbl {display: flex;
 align-items: center;
-margin-bottom: 25px;
+margin-bottom: rem(25px);
 }
 
 .form__radio-btn {  appearance: none;
@@ -52,8 +52,8 @@ margin-bottom: 25px;
 
 .form__radio-custom {position: relative;
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  width: rem(15px);
+  height: rem(15px);
   background-color: #fff;
   border-radius: 50%;
  
@@ -64,15 +64,15 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-height: 7px;width: 7px;
+height: rem(7px);width: rem(7px);
 background-color: $orange;
 border-radius: 50%;
 opacity: 0;
 }
 }
 
-.form__radio-name {margin-left: 10px; margin-right: 20px;
-padding-bottom: 2px;
+.form__radio-name {margin-left: rem(10px); margin-right: rem(20px);
+padding-bottom: rem(2px);
 }
 
 .form__checkbox {  
@@ -84,17 +84,17 @@ padding-bottom: 2px;
 }
 
 .form__checkbox-custom {position: relative;
-  height: 15px;width: 15px;
+  height: rem(15px);width: rem(15px);
   background: #fff;
-  margin-right: 10px;
+  margin-right: rem(10px);
   &::before {content: "";
   display: block;
 position: absolute;
 top: 50%;left: 50%;
 
-width: 8px;
-height: 4px;
-border: $red 3px solid;
+width: rem(8px);
+height: rem(4px);
+border: $red rem(3px) solid;
 border-top: transparent;
 border-right: transparent;
 transform: translate(-50%, -50%) rotate(-45deg);

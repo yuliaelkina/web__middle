@@ -1,9 +1,9 @@
 .scroll-down {
   align-self: center;
-margin-bottom: 40px;
-  border: 2px solid #fff;
-  border-radius: 3px;
-width: 21px; height: 21px;
+margin-bottom: rem(40px);
+  border: rem(2px) solid #fff;
+  border-radius: rem(3px);
+width: rem(21px); height: rem(21px);
 border-top: transparent;
 border-left: transparent;
 transform: translateX(-50%);

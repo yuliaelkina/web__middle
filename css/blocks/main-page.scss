@@ -9,24 +9,24 @@
 .main-page {align-self: center; 
 display: flex;
 align-items: center;
-padding-bottom: 60px;
+padding-bottom: rem(60px);
 }
 
-.main-page__text {margin-left: 20px;
-margin-top: 70px;
+.main-page__text {margin-left: rem(20px);
+margin-top: rem(70px);
 }
 
-.main-page__img {width: 44%; margin-left: 50px;
+.main-page__img {width: 44%; margin-left: rem(50px);
   background-image: url(./../images/main_burger_bg.png);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position-y: 65px;
+  background-position-y: rem(65px);
 }
 
 .main-page__desc {margin: 0;padding: 0;
   font-family: 'lifehack';
   color: #fff;
-  font-size: 65px;
+  font-size: rem(65px);
   letter-spacing: -0.02em;
   line-height: 1;
 }

@@ -1,12 +1,12 @@
 .btn {
    align-self: center;
-   padding-top: 10px; 
-  padding-bottom: 10px;
-  padding-right: 15px;
-  padding-left: 15px;
+   padding-top: rem(10px); 
+  padding-bottom: rem(10px);
+  padding-right: rem(15px);
+  padding-left: rem(15px);
   outline: none;
   background: $orange;
-  border-radius: 5px;
+  border-radius: rem(5px);
 
   color: #fff;
   font-family: 'ubuntu', Arial, Helvetica, sans-serif;
@@ -19,13 +19,13 @@
 
 .btn__more {
   background: #2f3234;
-  margin-top: 10px;
+  margin-top: rem(10px);
   &:hover {
     background: #1f2122;
   }
 }
 .btn-clear {background: transparent;
-  margin-left: 10px; 
+  margin-left: rem(10px); 
   &:hover {
     background: transparent;}
 }

@@ -7,22 +7,28 @@
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  margin-right: 15px;
+  margin-right: rem(15px);
+
+  &--hamburger {flex-direction: column; align-items: center; text-align: center;}
 }
 
-.menu__item {margin-right: 15px;
+.menu__item {margin-right: rem(15px);
 
 &:last-child {margin-right: 0;}
+
 &::after {content: "";
   display: inline-block;
   vertical-align: middle;
-  width: 4px;
-  height: 4px;
-  margin-left: 15px;
+  width: rem(4px);
+  height: rem(4px);
+  margin-left: rem(15px);
   background-color: #fff;
   border-radius: 50%;}
 
 &:last-child::after {display: none}
+
+&--hamburger + ::after {display: block; margin-top: 25px; margin-bottom: 25px;}
+
 }
 
 .menu__link {text-decoration: none;

@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1100, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mr Burger</title>
   
@@ -10,19 +10,24 @@
 </head>
 <body>
   <div class="wrapper">
-    <aside class="pagination">
-      <ul class="pagination__list">
-      <li class="pagination__point pagination__point--active"></li>
-      <li class="pagination__point"></li>
-      <li class="pagination__point"></li>
-      <li class="pagination__point"></li>
-      <li class="pagination__point"></li>
-      <li class="pagination__point"></li>
-      <li class="pagination__point"></li>
-      <li class="pagination__point"></li>
-      <li class="pagination__point"></li>
-    </ul>
-    </aside>
+   <div class="hamburger-menu">
+            <button type="button" class="hamburger-menu__icon"></button>
+            <div class="hamburger-menu__page">
+                <a href="/index.html" class="logo hamburger-menu__logo"><img src="./images/logo.png" alt="logo mr burger" class="logo__img"></a>
+                <button type="button" class="hamburger-menu__close"></button>
+                <nav class="menu">
+                    <ul class="menu__list menu__list--hamburger">
+                      <li class="menu__item menu__item--hamburger"><a href="#" class="menu__link">О нас</a></li>
+                      <li class="menu__item menu__item--hamburger"><a href="#" class="menu__link">Бургеры</a></li>
+                      <li class="menu__item menu__item--hamburger"><a href="#" class="menu__link">Команда</a></li>
+                      <li class="menu__item menu__item--hamburger"><a href="#" class="menu__link">Меню</a></li>
+                      <li class="menu__item menu__item--hamburger"><a href="#" class="menu__link">Отзывы</a></li>
+                      <li class="menu__item menu__item--hamburger"><a href="#" class="menu__link">Как мы работаем</a></li>
+                      <li class="menu__item menu__item--hamburger"><a href="#" class="menu__link">Контакты</a></li>
+                    </ul>
+                  </nav>
+              </div>
+          </div>
 
     <section class="page main-sect">
       <div class="container container__main-page">
@@ -40,6 +45,10 @@
             </ul>
           </nav>
           <button type="button" class="btn">Заказать</button>
+          
+
+
+
         </header>
         <div class="main-page">
           <img src="./images/main_burger.png" alt="big tasty burger" class="main-page__img">
@@ -55,18 +64,24 @@
       <ul class="best__list">
         <li class="best__item">
           <img src="./images/best_meat.png" alt="meat" class="best__icon">
-          <div class="best__name">100% свежее мясо</div>
-          <p">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.</p">
+          <div class="best__desc">
+            <div class="best__name">100% свежее мясо</div>
+            <p">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.</p">
+          </div>
         </li>
         <li class="best__item">
             <img src="./images/best_hand.png" alt="hand" class="best__icon">
-            <div class="best__name">Ручная сборка</div>
-            <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Первое полустишие притягивает сюжетный реформаторский пафос.</p>
+            <div class="best__desc">
+              <div class="best__name">Ручная сборка</div>
+              <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Первое полустишие притягивает сюжетный реформаторский пафос.</p>
+            </div>
           </li>
           <li class="best__item">
               <img src="./images/best__natural.png" alt="leaf" class="best__icon">
-              <div class="best__name">Натуральные ингридиенты</div>
-              <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.</p>
+              <div class="best__desc">
+                <div class="best__name">Натуральные ингридиенты</div>
+                <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.</p>
+              </div>
             </li>
       </ul>
     </div>
@@ -88,6 +103,75 @@
 
        </div>
       </div>
+      </section>
+
+      <section class="page team">
+       
+          <div class="team__content">
+          <div class="container container--team">
+            <div class="team-page">
+              <h2 class="title">Команда</h2>
+           
+            <accordeon class="team__desc">
+              <ul class="team__list">
+                <li class="team__item">
+                  <button type="button" class="team__item-name ">Дэниэл Редклиф</button>
+  <div class="team__item-desc">
+    <div class="team__item-avatar" style="background-image: url(images/team_avatar-1.jpg)">
+    </div>
+    <div class="team__item-text">
+      <div class="team__item-occupation">Оператор</div>
+      <p>С радостью поможет подобрать идеальный бургер и оформить заказ.  
+      </p>
+    </div>
+  </div>
+                </li>
+                <li class="team__item">
+                  <button type="button" class="team__item-name team__item-name--active">Ричард Джеймс</button>
+  <div class="team__item-desc team__item-desc--active">
+    <div class="team__item-avatar" style="background-image: url(images/team_avatar-1.jpg)">
+  </div>
+    <div class="team__item-text">
+      <div class="team__item-occupation">Оператор</div>
+      <p>С радостью поможет подобрать идеальный бургер и оформить заказ.  
+      </p>
+    </div>
+    </div>
+                </li>
+                <li class="team__item">
+                  <button type="button" class="team__item-name">Джейк Финн</button>
+  <div class="team__item-desc">
+      <div class="team__item-avatar" style="background-image: url(images/team_avatar-1.jpg)">
+      </div>
+    <div class="team__item-text">
+      <div class="team__item-occupation">Оператор</div>
+      <p>С радостью поможет подобрать идеальный бургер и оформить заказ.  
+      </p>
+    </div>
+  </div>
+                </li>
+                <li class="team__item">
+                  <button type="button" class="team__item-name">Николай Иванов</button>
+  <div class="team__item-desc">
+      <div class="team__item-avatar" style="background-image: url(images/team_avatar-1.jpg)">
+      </div>
+    <div class="team__item-text">
+      <div class="team__item-occupation">Оператор</div>
+      <p>С радостью поможет подобрать идеальный бургер и оформить заказ.  
+      </p>
+    </div>
+  </div>
+                </li>
+              </ul>
+            </accordeon>
+            </div>
+        </div> 
+      </div>
+      </section>
+
+      <section class="page menu-page">
+
+
       </section>
 
       <section class="page reviews">
@@ -169,17 +253,22 @@
         
       </section>
 
-      <section class="page order">
-<div class="container">
-  <h2 class="title title--order">Закажите доставку</h2>
-  <div class="form">
-    <form action="" class="form__elem">
-      <div class="form__column">
-        <div class="form__row">
-          <label class="form__block">
-            <div class="form__block-title">Имя</div>
-            <input type="text" class="form__input">
-          </label>
+      <section class="page work">
+
+
+      </section>
+
+  <section class="page order">
+    <div class="container">
+      <h2 class="title title--order">Закажите доставку</h2>
+      <div class="form">
+        <form action="" class="form__elem">
+            <div class="form__column">
+              <div class="form__row">
+                <label class="form__block">
+                  <div class="form__block-title">Имя</div>
+                  <input type="text" class="form__input">
+                </label>
           <label class="form__block">
             <div class="form__block-title">Телефон</div>
             <input type="text" class="form__input" placeholder="89219453212">
@@ -237,16 +326,49 @@
            </label>
         </div>
         <div class="form__row">
-          <button type="button" class="btn">Заказать</button>
-          <button type="button" class="btn btn-clear">Очистить</button>
+          <button type="submit" class="btn">Заказать</button>
+          <button type="reset" class="btn btn-clear">Очистить</button>
         </div>
-
       </div>
     </form>
   </div>
 </div>
-      </section>
-   
+  </section>
+
+  <section class="page map">
+
+
+  </section>
+
+  <footer class="footer">
+<div class="container">
+  <div class="contacts">
+    <div class="contacts__adress">Санкт-Петербург, ул.Бабушкина, д.12/1, 15</div>
+  </div>
+  <a href="tel:+78123771377" class="contacts__call">+7 (812) 377-13-77</a>
+</div>
+<div class="social">
+  <ul class="social__list">
+    <li class="social__item"><a href="#" class="social__link"></a></li>
+    <li class="social__item"><a href="#" class="social__link"></a></li>
+    <li class="social__item"><a href="#" class="social__link"></a></li>
+    <li class="social__item"><a href="#" class="social__link"></a></li>
+  </ul>
+</div>
+  </footer>
+
+  <aside class="pagination">
+    <ul class="pagination__list">
+      <li class="pagination__item"> <button class="pagination__point pagination__point--active"></button></li>
+      <li class="pagination__item"> <button class="pagination__point"></button></li>
+      <li class="pagination__item"> <button class="pagination__point"></button></li>
+      <li class="pagination__item"> <button class="pagination__point"></button></li>
+      <li class="pagination__item"> <button class="pagination__point"></button></li>
+      <li class="pagination__item"> <button class="pagination__point"></button></li>
+      <li class="pagination__item"> <button class="pagination__point"></button></li>
+      <li class="pagination__item"> <button class="pagination__point"></button></li>
+    </ul>
+    </aside>  
   </div>
 </body>
 </html>

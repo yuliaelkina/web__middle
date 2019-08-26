@@ -3,7 +3,7 @@
   }
   
   .best__list { display: flex;
-    margin-right: 35px;
+    margin-right: rem(35px);
     justify-content: space-between;
     &:last-child {margin-right: 0;}
   }
@@ -18,13 +18,13 @@
     line-height: 1.4em;
   }
 
-  .best__icon {max-width: 95px;
-  max-height: 89px; margin-bottom: 34px;
+  .best__icon {max-width: rem(95px);
+  max-height: rem(89px); margin-bottom: rem(34px);
   }
   
   .best__name {
     color: $gray;
-     margin-bottom: 30px;
+     margin-bottom: rem(30px);
     font-family: 'lifehack';
     font-size: 24px;
   }
