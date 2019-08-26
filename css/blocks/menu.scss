@@ -1,5 +1,6 @@
 
-.menu {margin-left: auto;}
+.menu {margin-left: auto;
+}
 
 .menu__list {
   display: flex;
@@ -8,7 +9,18 @@
   align-items: center;
   text-transform: uppercase;
   margin-right: rem(15px);
+
 }
+
+.menu__link {text-decoration: none;
+  color: white;
+  font-family: 'ubuntu', Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+
 
 .menu__item {margin-right: rem(15px);
 
@@ -26,18 +38,35 @@
 &:last-child::after {display: none}
 
 }
-
-.menu__link {text-decoration: none;
-  color: white;
-  font-family: 'ubuntu', Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  font-weight: 500;
+.menu--hamb {margin-left: 0;
+min-width: 40%;
 }
 
-.menu__list--hamb {flex-direction: column;
-  align-items: center;
-
+.menu__list--hamb {
+  flex-direction: column;
+  align-content: center;
+  margin-right: 0;
 }
-.menu__item--hamb {display: flex;flex-direction: column;
-align-items: center; text-align: center; margin-right: 0;}
-.menu__item--hamb::after  {display: block; margin-left: 0;}
+
+.menu__item--hamb {display: flex;
+flex-direction: column;
+text-align: center; 
+align-items: center;
+margin-right: 0; 
+margin-bottom: 20px;
+}
+
+.menu__item--hamb::after  {
+  display: block; 
+  margin-left: 0; 
+  margin-top: 20px;
+  
+}
+
+.menu__item--hamb:last-child::after {
+  display: none;
+}
+
+.menu--main {
+  @include tablets {display: none;}
+}
