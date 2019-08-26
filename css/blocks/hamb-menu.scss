@@ -1,0 +1,34 @@
+
+
+.hamb-menu__button {position: fixed;
+  top: rem(35px); right: rem(30px);
+  height: rem(25px);
+width: rem(25px);
+display: flex; 
+flex-direction: column;
+display: none;}
+
+
+.hamb-menu__line {
+  height: rem(4px);width: rem(24px);background-color: #fff;
+  border-radius: 3px; margin-bottom: rem(4px);
+&:last-child {margin-bottom: 0;}
+}
+
+
+
+.hamb-menu__page {position: absolute; display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba($gray, 0.99);
+  z-index: 15;
+
+
+
+
+
+
+  
+}
