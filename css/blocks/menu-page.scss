@@ -4,24 +4,63 @@
 
 .menu-page__content {position: absolute;
   top: 0;bottom: 0;right: 0;
-background: rgba($gray, 0.93);
-
-
+width: 71%;
 }
 
-.menu-page__list {display: flex; color: #fff;
-  justify-content: end;
+.menu-page__list {width: 100%;height: 100%;
+  color: #fff;
+display: flex;
+justify-content: flex-end;
 
  }
 
+.menu-page__item {display: flex;
+  justify-content: center;
+  align-items: left;
+  height: 100%;
+  width: rem(80px);
+&::after {
+  content: "";
+  position: absolute;
+  top: 0;right: 0;
+  bottom: 0;left: 0;
+  background: rgba($gray, 0.75);}}
 
-.menu-page__ttl {  font-family: 'gagalin';
+.menu-page__item--meat {position: relative;
+  background: url(./../images/menu-page_bg.jpg) center center / cover no-repeat;
+}
+
+.menu-page__item--diet {position: relative;
+  background: url(./../images/diet_bg.jpg) center center / cover no-repeat;
+}
+.menu-page__item--veg {position: relative;
+  background: url(./../images/veg_bg.jpg) center center / cover no-repeat;
+
+}
+
+.menu-page__ttl {font-family: 'gagalin';
+  text-decoration: none;
+  color: #fff;
   font-size: rem(40px);
   text-transform: uppercase;
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
   line-height: 1;
-  transform: rotate(-90deg);
+  z-index: 5;
+  margin-bottom: rem(35px);
+  text-align: left;
+  padding-left: rem(15px);
+  padding-right: rem(15px);
 }
 
-.menu-page__text {width: 0;overflow: hidden;
-&--active {width: rem(540px)}
+.menu-page__text {display: none;
+  background: rgba($gray, 0.93);
+  overflow: hidden;
+  line-height: 2em;
+  z-index: 5;
 }
+
+.menu-page__item--active {width: 79%;}
+.menu-page__item--active .menu-page__text {display: block; padding: rem(20px) rem(40px);
+}
+.menu-page__item--active .menu-page__ttl {color: $yellow;}

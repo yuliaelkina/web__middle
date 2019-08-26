@@ -10,6 +10,7 @@
 
 }
 .form__column {width: 50%; margin-right: rem(20px);
+  @include tablets {margin-right: 0;}
   &:last-child {margin-right: 0;}
 }
 

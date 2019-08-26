@@ -2,18 +2,16 @@
   padding-top: rem(10px);
   padding-bottom: rem(12px);
 }
+.contacts__adress {margin-bottom: 10px;}
 
-.contacts__call {
+.contacts__call {display: inline-block;
   font-weight: 700;
   text-decoration: none;
-  color: $red;
+  color: $red; 
 
-&::before {content: ""; display: inline-block;
-  height: rem(12px);
-  width: rem(11px);
-  background: url(./../images/phone.png) center center no-repeat;
-  background-size: contain;
-  margin-right: rem(8px);
+}
 
-} 
+.contacts__icon { display: inline-block; height: rem(12px);
+  width: rem(11px); margin-right: rem(8px);
+
 }

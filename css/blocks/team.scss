@@ -54,30 +54,35 @@ transform: rotate(180deg);
   overflow: hidden;
   padding-top: rem(20px);
 overflow: hidden;
-&--active {min-height: rem(140px);
-}
-}
 
-.team__item-desc--active {
- @include tablets {display: flex;
-  flex-direction: column;
-  min-height: rem(300px)} 
+@include tablets {
+padding-top: 0;}
 }
-
-
-.team__item-name--active {color: $yellow;
-&::before {transform: rotate(0deg);}
-} 
 
 .team__item-avatar {
-  height: rem(100px); width: rem(100px);
+  height: rem(100px); 
+  width: rem(100px);
   border-radius: 50%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   margin-right: rem(20px);
+  flex-shrink: 0;
+
   @include tablets {margin-bottom: rem(25px);
   align-self: center;}
 }
+
+
+.team__item--active .team__item-name {color: $yellow;
+&::before {transform: rotate(0deg);}
+} 
+
+.team__item--active .team__item-desc {min-height: rem(140px);
+@include tablets {display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: rem(300px);
+} }
 
 .team__item-occupation {font-weight: 700;}

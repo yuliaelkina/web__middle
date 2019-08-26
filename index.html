@@ -18,7 +18,9 @@
             <span class="hamb-menu__line"></span>
           </button>   
           <div class="hamb-menu__page">
-              <a href="/index.html" class="logo logo--hamb"><img src="./images/logo.png" alt="logo mr burger" class="logo__img"></a>
+              <a href="/index.html" class="logo logo--hamb"><svg class="logo__img">
+                  <use xlink:href="/sprite.svg#logo"></use>
+                </svg></a>
               <button type="button" class="hamb-menu__close"></button>
              <nav class="menu menu--hamb">
                 <ul class="menu__list menu__list--hamb">
@@ -38,7 +40,9 @@
     <section class="page main-sect">
       <div class="container container__main-page">
         <header class="header">
-          <a href="/index.html" class="logo"><img src="./images/logo.png" alt="logo mr burger" class="logo__img"></a>
+          <a href="/index.html" class="logo"><svg class="logo__img">
+              <use xlink:href="/sprite.svg#logo"></use>
+            </svg></a>
           <nav class="menu menu--main">
             <ul class="menu__list">
               <li class="menu__item"><a href="#" class="menu__link">О нас</a></li>
@@ -67,21 +71,27 @@
       <h2 class="title title--best">мы лучшие</h2>
       <ul class="best__list">
         <li class="best__item">
-          <img src="./images/best_meat.png" alt="meat" class="best__icon">
+            <svg class="best__icon">
+                <use xlink:href="/sprite.svg#meat"></use>
+              </svg>
           <div class="best__desc">
             <div class="best__name">100% свежее мясо</div>
             <p">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.</p">
           </div>
         </li>
         <li class="best__item">
-            <img src="./images/best_hand.png" alt="hand" class="best__icon">
+            <svg class="best__icon">
+                <use xlink:href="/sprite.svg#hand"></use>
+              </svg>
             <div class="best__desc">
               <div class="best__name">Ручная сборка</div>
               <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Первое полустишие притягивает сюжетный реформаторский пафос.</p>
             </div>
           </li>
           <li class="best__item">
-              <img src="./images/best__natural.png" alt="leaf" class="best__icon">
+              <svg class="best__icon">
+                  <use xlink:href="/sprite.svg#natural"></use>
+                </svg>
               <div class="best__desc">
                 <div class="best__name">Натуральные ингридиенты</div>
                 <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.</p>
@@ -130,9 +140,9 @@
     </div>
   </div>
                 </li>
-                <li class="team__item">
-                  <button type="button" class="team__item-name team__item-name--active">Ричард Джеймс</button>
-  <div class="team__item-desc team__item-desc--active">
+                <li class="team__item team__item--active">
+                  <button type="button" class="team__item-name">Ричард Джеймс</button>
+  <div class="team__item-desc team__item-desc">
     <div class="team__item-avatar" style="background-image: url(images/team_avatar-1.jpg)">
   </div>
     <div class="team__item-text">
@@ -176,24 +186,24 @@
       <section class="page menu-page">
 <accordeon class="menu-page__content">
 <ul class="menu-page__list">
-  <li class="menu-page__item">
-    <div class="menu-page__ttl">для мясоедов</div>
-    <div class="menu-page__text menu-page__text--active">
+  <li class="menu-page__item menu-page__item--meat  menu-page__item--active">
+    <a href="#"class="menu-page__ttl">для мясоедов</a>
+    <div class="menu-page__text">
       <p>Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр.
           Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.
           </p>
     </div>
   </li>
-  <li class="menu-page__item">
-      <div class="menu-page__ttl">вегетарианское</div>
+  <li class="menu-page__item menu-page__item--veg">
+      <a href="#" class="menu-page__ttl">вегетарианское</a>
       <div class="menu-page__text">
         <p>Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр.
             Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.
             </p>
       </div>
     </li>
-    <li class="menu-page__item">
-        <div class="menu-page__ttl">диетическое</div>
+    <li class="menu-page__item menu-page__item--diet">
+        <a href="#" type="button" class="menu-page__ttl">диетическое</a>
         <div class="menu-page__text">
           <p>Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр.
               Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.
@@ -372,18 +382,27 @@
   </section>
 
   <footer class="footer">
-<div class="container">
+<div class="container container--footer">
   <div class="contacts">
     <div class="contacts__adress">Санкт-Петербург, ул.Бабушкина, д.12/1, 15</div>
-  </div>
-  <a href="tel:+78123771377" class="contacts__call">+7 (812) 377-13-77</a>
+  <svg class="contacts__icon">
+      <use xlink:href="/sprite.svg#phone"></use>
+    </svg><a href="tel:+78123771377" class="contacts__call">+7 (812) 377-13-77</a>
 </div>
 <div class="social">
   <ul class="social__list">
-    <li class="social__item"><a href="#" class="social__link"></a></li>
-    <li class="social__item"><a href="#" class="social__link"></a></li>
-    <li class="social__item"><a href="#" class="social__link"></a></li>
-    <li class="social__item"><a href="#" class="social__link"></a></li>
+    <li class="social__item"><a href="#" class="social__link"><svg class="social__icon">
+        <use xlink:href="/sprite.svg#vk"></use>
+      </svg></a></li>
+    <li class="social__item"><a href="#" class="social__link"><svg class="social__icon">
+        <use xlink:href="/sprite.svg#fb"></use>
+      </svg></a></li>
+    <li class="social__item"><a href="#" class="social__link"><svg class="social__icon">
+        <use xlink:href="/sprite.svg#inst"></use>
+      </svg></a></li>
+    <li class="social__item"><a href="#" class="social__link"><svg class="social__icon">
+        <use xlink:href="/sprite.svg#tw"></use>
+      </svg></a></li>
   </ul>
 </div>
   </footer>

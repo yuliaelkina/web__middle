@@ -1,0 +1,12 @@
+.social__list {display: flex;
+  align-items: center;
+}
+.social__item {margin-right: rem(20px);
+opacity: 0.3; 
+transition: opacity 0.3s;
+ &:last-child {margin-right: 0;}
+&:hover {opacity: 1;}
+}
+.social__icon {width: rem(22px);
+max-height: rem(22px);}
+
