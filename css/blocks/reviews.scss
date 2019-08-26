@@ -9,6 +9,8 @@ filter: grayscale(1);
 
 &:hover 
  .reviews__hover {opacity: 1;}
+
+ @include tablets {width: 50%; height: 25%;}
 }
 .reviews__hover {overflow: hidden; position: absolute;
   top: 0;left: 0;right: 0;bottom: 0;

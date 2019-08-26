@@ -14,6 +14,11 @@
 
 &--white {color: #fff;
 }
+
+@include tablets {
+  text-align: center;
+  font-size: rem(65px);
+    }
 }
 
 

@@ -4,6 +4,8 @@
   font-weight: 300; 
 }
 .form__elem {display: flex;
+
+  @include tablets {flex-direction: column; align-items: center;}
   
 
 }

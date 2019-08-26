@@ -1,5 +1,4 @@
 
-
 .hamb-menu__button {position: fixed;
   top: rem(33px); right: rem(30px);
   height: rem(25px);
@@ -10,7 +9,7 @@ z-index: 10;
 display: none;
 
 @include tablets {
-  display: block;
+display: flex;
 }
 }
 
@@ -20,7 +19,6 @@ display: none;
   border-radius: 3px; margin-bottom: rem(4px);
 &:last-child {margin-bottom: 0;}
 }
-
 
 
 .hamb-menu__page {position: fixed; 
