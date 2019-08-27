@@ -1,4 +1,4 @@
-.scroll-down {position: fixed;
+.scroll-down {position: absolute;
  left: 50%; bottom: rem(40px);
   border: rem(2px) solid #fff;
   border-radius: rem(3px);
@@ -7,5 +7,5 @@ border-top: transparent;
 border-left: transparent;
 transform: translateX(-50%);
 transform: rotate(45deg);
-z-index: 100;
+z-index: 10;
 }
