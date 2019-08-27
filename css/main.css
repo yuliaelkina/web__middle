@@ -1194,7 +1194,6 @@ li {
   padding: 0.9375rem; }
 
 .menu-page__item--active .menu-page__text {
-  width: 100%;
   width: 33.75rem; }
   @media screen and (max-width: 768px) {
     .menu-page__item--active .menu-page__text {
