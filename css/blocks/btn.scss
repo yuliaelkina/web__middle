@@ -18,11 +18,18 @@
 }
 
 .btn__more {
-  background: #2f3234;
+  
   margin-top: rem(10px);
   &:hover {
     background: #1f2122;
   }
+
+  @include phones {display: none;}
+}
+
+.btn__read {display: none;
+  background: #2f3234;
+  @include phones {display: block;}
 }
 .btn-clear {background: transparent;
   margin-left: rem(10px); 

@@ -18,6 +18,11 @@
 @include tablets {
   text-align: center;
   font-size: rem(65px);
+  margin-bottom: rem(40px);
+    }
+
+    @include phones {
+      font-size: rem(50px);
     }
 }
 

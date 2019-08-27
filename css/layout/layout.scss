@@ -46,7 +46,10 @@ li {list-style: none;
   justify-content: center;
 }
 .container--footer {flex-direction: row; justify-content: space-between;
-align-items: center;}
+align-items: center;
+@include phones {
+  flex-direction: column;
+}}
 
 * {box-sizing: border-box;
 }

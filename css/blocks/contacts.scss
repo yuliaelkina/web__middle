@@ -2,9 +2,16 @@
   padding-top: rem(10px);
   padding-bottom: rem(12px);
 }
-.contacts__adress {margin-bottom: 10px;}
-
-.contacts__call {display: inline-block;
+.contacts__adress {margin-bottom: 10px;
+  @include phones {
+    text-align: center;}
+}
+.contacts__phone {
+  @include phones {
+    display: flex;justify-content: center; align-items: center;
+  }
+}
+.contacts__call {display: inline-block; 
   font-weight: 700;
   text-decoration: none;
   color: $red; 
@@ -12,6 +19,6 @@
 }
 
 .contacts__icon { display: inline-block; height: rem(12px);
-  width: rem(11px); margin-right: rem(8px);
+  width: rem(11px); margin-right: rem(8px); vertical-align: middle;
 
 }

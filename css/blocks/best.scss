@@ -3,9 +3,13 @@
   }
   
   .best__list { display: flex;
-    margin-right: rem(35px);
     justify-content: space-between;
-    &:last-child {margin-right: 0;}
+ 
+    @include phones {
+   flex-direction: column;
+   margin-left: 5%;
+   margin-right: 5%;
+    }
   }
 
   .best__item {max-width: 31%; 
@@ -16,16 +20,34 @@
     font-size: 14px;
     text-align: center;
     line-height: 1.4em;
+
+    @include phones {
+      display: flex; 
+      max-width: 100%;
+      margin-bottom: rem(20px);
+       }
   }
 
   .best__icon {max-width: rem(95px);
   max-height: rem(89px); margin-bottom: rem(34px);
-  }
+  min-width: rem(85px);
+}
+
+.best__desc {
+  @include phones {
+  margin-left: rem(20px);
+    text-align: left;
+     }
+}
   
   .best__name {
     color: $gray;
      margin-bottom: rem(30px);
     font-family: 'lifehack';
     font-size: 24px;
+    @include phones {
+      margin-bottom: rem(20px);
+      text-align: left;
+       }
   }
   
