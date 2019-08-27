@@ -1142,8 +1142,7 @@ li {
   -ms-flex-align: left;
   align-items: left;
   -webkit-box-pack: center;
-  height: 100%;
-  width: 5rem; }
+  height: 100%; }
   .menu-page__item::after {
     content: "";
     position: absolute;
@@ -1194,14 +1193,12 @@ li {
 .menu-page__item--active p {
   padding: 0.9375rem; }
 
-.menu-page__item--active {
+.menu-page__item--active .menu-page__text {
+  width: 100%;
   width: 33.75rem; }
   @media screen and (max-width: 768px) {
-    .menu-page__item--active {
+    .menu-page__item--active .menu-page__text {
       width: 22.5rem; } }
-
-.menu-page__item--active .menu-page__text {
-  width: 100%; }
 
 .menu-page__item--active .menu-page__ttl {
   color: #f9b43b; }

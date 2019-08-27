@@ -18,7 +18,6 @@ display: flex;
   align-items: left;
   -webkit-box-pack: center;
   height: 100%;
-  width: rem(80px);
 &::after {
   content: "";
   position: absolute;
@@ -62,8 +61,8 @@ display: flex;
   
 }
 .menu-page__item--active p {padding: rem(15px); }
-.menu-page__item--active {width: rem(540px);
-@include tablets {width: rem(360px)}}
 .menu-page__item--active .menu-page__text {width: 100%;
+  width: rem(540px);
+@include tablets {width: rem(360px)}
 }
 .menu-page__item--active .menu-page__ttl {color: $yellow;}
