@@ -53,14 +53,16 @@ justify-content: flex-end;
   padding-right: rem(15px);
 }
 
-.menu-page__text {display: none;
+.menu-page__text {
   background: rgba($gray, 0.93);
   overflow: hidden;
+  width: 0;
   line-height: 2em;
   z-index: 5;
+  
 }
 
 .menu-page__item--active {width: 79%;}
-.menu-page__item--active .menu-page__text {display: block; padding: rem(20px) rem(40px);
+.menu-page__item--active .menu-page__text {width: 100%; padding: rem(15px); 
 }
 .menu-page__item--active .menu-page__ttl {color: $yellow;}

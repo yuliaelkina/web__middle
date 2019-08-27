@@ -2,7 +2,9 @@
   z-index: 10;
  right: rem(50px);
  top: rem(95px);
+@include tablets {display: none;} 
  }
+ 
  .pagination__item {display: block;
    margin-bottom: rem(15px);
   &:last-child {margin-bottom: 0;} 

@@ -2,6 +2,10 @@
 .menu {margin-left: auto;
 }
 
+.menu--hamb {margin-left: 0;
+min-width: 40%;
+}
+
 .menu__list {
   display: flex;
   height: 100%;
@@ -12,14 +16,11 @@
 
 }
 
-.menu__link {text-decoration: none;
-  color: white;
-  font-family: 'ubuntu', Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  font-weight: 500;
+.menu__list--hamb {
+  flex-direction: column;
+  align-content: center;
+  margin-right: 0;
 }
-
-
 
 
 .menu__item {margin-right: rem(15px);
@@ -34,19 +35,18 @@
   margin-left: rem(15px);
   background-color: #fff;
   border-radius: 50%;}
-
 &:last-child::after {display: none}
-
-}
-.menu--hamb {margin-left: 0;
-min-width: 40%;
 }
 
-.menu__list--hamb {
-  flex-direction: column;
-  align-content: center;
-  margin-right: 0;
+
+
+.menu__link {text-decoration: none;
+  color: white;
+  font-family: 'ubuntu', Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
 }
+
 
 .menu__item--hamb {display: flex;
 flex-direction: column;
