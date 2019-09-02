@@ -1,0 +1,26 @@
+.kkal {position: absolute;
+  bottom: rem(140px);
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'gagalin', serif;
+}
+
+.kkal__icon {position: relative;
+  width: rem(60px);
+  height: rem(60px);
+
+}
+
+.kkal__value {position: absolute;
+  top: 45%;
+  left: 30%;
+
+
+}
+.kkal__def {display: block;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'gagalin', serif;
+  position: absolute; 
+  left: 20%;
+}

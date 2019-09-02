@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Задачи по JavaScript 2</title>
+</head>
+<body>
+<div class="wrapper">
+<div class="container">
+<h1 class="title">Домашняя работа по Dom</h1>
+<div class="content">
+  <div class="text">Блок с текстом</div>
+  
+</div>
+
+</div>
+</div>
+<script>
+   const element = document.createElement('div');
+   const content = document.querySelector('.content');
+   content.appendChild (element);
+   element.textContent = 'Этот элемент создан при помощи DOM API';
+   const element2 = document.createElement('div');
+   element2.className = 'inner';
+   element.appendChild (element2);
+   element2.textContent = 'Этот элемент тоже создан при помощи DOM API';
+  element2.style.color = 'red';
+  element2.addEventListener ('click', function () {console.log('Этот текст говорит о том, что я всё сделал правильно')
+  });
+
+  const link = document.createElement('a');
+  link.textContent = 'LoftSchool';
+  link.href = 'https://loftschool.com';
+  content.appendChild (link);
+  link.addEventListener ('click', function () {console.log('Я кликнул на ссылку HREF');
+  event.preventDefault ();
+  });
+  const form = document.createElement('form');
+  const input = document.createElement('input');
+  const button = document.createElement('button');
+  button.textContent = 'вывести значение из текстового поля в консоль';
+  content.appendChild(form);
+  form.appendChild (input);
+  form.appendChild (button);
+  input.name = 'inpt';
+  button.name = 'btn';
+  button.addEventListener ('click', function(event) {
+event.preventDefault();
+console.log(form.elements.inpt.value);
+});
+</script>
+
+
+
+</body>
+</html>

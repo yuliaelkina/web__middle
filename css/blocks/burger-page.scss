@@ -1,8 +1,8 @@
-.burger {
+.burger-page {
   background: linear-gradient(to bottom, #f9b43b, #eb8d38 50%, #f9b43b 85%);
 background-repeat: no-repeat;
 }
-.burger-page {display: flex; justify-content: space-around;
+.burger-page__cont {display: flex; justify-content: space-around;
   align-items: center;
 }
 
@@ -10,6 +10,8 @@ background-repeat: no-repeat;
   max-height: rem(329px);
 }
 .burger-page__text {color: #fff;
+  line-height: 1.4;
+  font-weight: 300;
   margin-top: rem(45px);
 }
 .burger-page__order {margin-top: rem(35px);

@@ -919,14 +919,14 @@ li {
       margin-bottom: 1.25rem;
       text-align: left; } }
 
-.burger {
+.burger-page {
   background: -webkit-gradient(linear, left top, left bottom, from(#f9b43b), color-stop(50%, #eb8d38), color-stop(85%, #f9b43b));
   background: -webkit-linear-gradient(top, #f9b43b, #eb8d38 50%, #f9b43b 85%);
   background: -o-linear-gradient(top, #f9b43b, #eb8d38 50%, #f9b43b 85%);
   background: linear-gradient(to bottom, #f9b43b, #eb8d38 50%, #f9b43b 85%);
   background-repeat: no-repeat; }
 
-.burger-page {
+.burger-page__cont {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -942,6 +942,8 @@ li {
 
 .burger-page__text {
   color: #fff;
+  line-height: 1.4;
+  font-weight: 300;
   margin-top: 2.8125rem; }
 
 .burger-page__order {
@@ -966,6 +968,62 @@ li {
   color: #e35028;
   margin-left: 0.5rem;
   margin-right: 1.25rem; }
+
+.ingridients__logo {
+  position: absolute;
+  top: 6.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #f08c33;
+  height: 5.625rem;
+  width: 5.625rem;
+  border-radius: 4px; }
+
+.ingridients__icon {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  margin-bottom: 0.3125rem; }
+
+.ingridients__name {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'gagalin', serif; }
+
+.kkal {
+  position: absolute;
+  bottom: 8.75rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'gagalin', serif; }
+
+.kkal__icon {
+  position: relative;
+  width: 3.75rem;
+  height: 3.75rem; }
+
+.kkal__value {
+  position: absolute;
+  top: 45%;
+  left: 30%; }
+
+.kkal__def {
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'gagalin', serif;
+  position: absolute;
+  left: 20%; }
 
 .scroll-down {
   position: absolute;
