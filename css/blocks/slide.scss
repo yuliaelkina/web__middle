@@ -1,0 +1,45 @@
+.slide {display: flex;
+  
+@include tablets {flex-direction: column;
+justify-content: center;}
+}
+
+.slide__photo {position: relative; 
+  display: flex;
+  justify-content: center;
+align-items: center;}
+
+.slide__desc {
+@include tablets {display: flex;
+flex-direction: column;
+align-items: center;}
+}
+
+
+.slide__img {max-width: rem(505px);
+  max-height: rem(329px);
+  @include tablets {max-width: rem(350px);}
+}
+.slide__text {color: #fff;
+  line-height: 1.4;
+  font-weight: 300;
+  
+  @include tablets {text-align: center;}
+}
+.slide__order {margin-top: rem(35px);
+  display: flex; align-items: baseline;
+}
+.slide__price {font-family: 'gagalin';
+  font-size: rem(72px);
+  text-transform: uppercase;
+  color: #e35028;
+
+}
+.slide__rub {font-family: 'gagalin';
+  font-size: rem(30px);
+  text-transform: uppercase;
+  color: #e35028;
+  margin-left: rem(8px);
+  margin-right: rem(20px);
+}
+

@@ -1,0 +1,40 @@
+
+.slider {position: relative;
+  display: flex; justify-content: space-around;
+  align-items: center;
+}
+
+.slider__wrap {
+  overflow: hidden;
+}
+
+.slider__list {display: flex;
+  width: 100%;}
+.slider__item {width: 100%;
+flex-shrink: 0;}
+
+.slider__scroll {position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.slider__scroll-icon {
+  width: rem(15px);
+height: rem(28px);
+transform: rotate(90deg);
+}
+
+.slider__scroll-icon--left {
+  margin-left: rem(-20px);
+
+  @include tablets {margin-left: 0;}
+}
+
+.slider__scroll-icon--right {
+  transform: rotate(-90deg);
+  margin-right: rem(-20px);
+  @include tablets {margin-right: 0;}
+}

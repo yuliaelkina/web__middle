@@ -11,33 +11,33 @@
 <body>
   <div class="wrapper">
       
-    <div class="hamb-menu">
-          <button type="button" class="hamb-menu__button">
-            <span class="hamb-menu__line"></span>
-            <span class="hamb-menu__line"></span>
-            <span class="hamb-menu__line"></span>
+    <div class="hambmenu">
+          <button type="button" class="hambmenu__button">
+            <span class="hambmenu__line"></span>
+            <span class="hambmenu__line"></span>
+            <span class="hambmenu__line"></span>
           </button>   
-          <div class="hamb-menu__page">
+          <div id="hambmenu__page" class="hambmenu__page">
               <a href="/index.html" class="logo logo--hamb"><svg class="logo__img">
-                  <use xlink:href="/sprite.svg#logo"></use>
+                  <use xlink:href="./images/sprite.svg#logo"></use>
                 </svg></a>
-              <button type="button" class="hamb-menu__close"></button>
+              <button type="button" class="hambmenu__close"></button>
              <nav class="menu menu--hamb">
                 <ul class="menu__list menu__list--hamb">
-                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link">О нас</a></li>
-                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link">Бургеры</a></li>
-                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link">Команда</a></li>
-                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link">Меню</a></li>
-                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link">Отзывы</a></li>
-                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link">Как мы работаем</a></li>
-                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link">Контакты</a></li>
+                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link menu__link--hamb">О нас</a></li>
+                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link menu__link--hamb">Бургеры</a></li>
+                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link menu__link--hamb">Команда</a></li>
+                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link menu__link--hamb">Меню</a></li>
+                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link menu__link--hamb">Отзывы</a></li>
+                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link menu__link--hamb">Как мы работаем</a></li>
+                  <li class="menu__item menu__item--hamb"><a href="#" class="menu__link menu__link--hamb">Контакты</a></li>
                 </ul>
               </nav>
           </div>
         </div>
            
 
-    <section class="page main-sect">
+    <section id="1" class="page main-sect">
       <div class="container container__main-page">
         <header class="header">
           <a href="/index.html" class="logo"><svg class="logo__img">
@@ -103,40 +103,100 @@
     </div>
     </section>
 
-    <section class="page burger-page">
+    <section id="2" class="page burger-page">
         <div class="container">
-       <div class="burger-page__cont">
-         <div class="burger-page__pictures">
-           <div class="ingridients">
-             <div class="ingridients__logo">
-                <svg class="ingridients__icon">
-                  <use xlink:href="./images/sprite.svg#burger"></use>
-                </svg>
-                <div class="ingridients__name">Состав</div>   
-             </div>
-             <div class="ingridients__hover">
+       <div class="slider">
+         <div class="slider__wrap">
+           <ul class="slider__list">
+             <li class="slider__item slider__item--active">
+               <div class="slide">
+                 <div class="slide__photo">
+                   <img src="./images/burger_img.png" alt="black burger" class="slide__img">
+                 </div>
+                 <div class="slide__desc">
+                   <h2 class="title title--white">Dark BEEF Burger</h2>
+                   <div class="slide__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</div>
+                 <div class="slide__order">
+                   <div class="slide__price">500</div>
+                   <div class="slide__rub">рублей</div>
+                   <button type="button" class="btn">Заказать</button>
+                 </div>
+                  </div>
+               </div> 
+              <div class="ingridients">
+                <div class="ingridients__logo">
+                  <svg class="ingridients__icon">
+                    <use xlink:href="./images/sprite.svg#burger"></use>
+                  </svg>
+                  <div class="ingridients__name">Состав</div>   
+                </div>
+                <div class="ingridients__down">
+                  <ul class="ingridients__list">
+                    <li class="ingridients__item">
+                      <div class="ingridients__left">
+                        <div class="ingridients__picture ingridients__picture--beef"></div>
+                        <div class="ingridients__text">Говядина</div>
+                      </div>
+                      <div class="ingridients_weight">300 г</div>
+                    </li>
+                    <li class="ingridients__item">
+                        <div class="ingridients__left">
+                          <div class="ingridients__picture ingridients__picture--bun"></div>
+                          <div class="ingridients__text">Булочки</div>
+                        </div>
+                        <div class="ingridients_weight">100 г</div>
+                    </li>
+                    <li class="ingridients__item">
+                        <div class="ingridients__left">
+                          <div class="ingridients__picture ingridients__picture--salad"></div>
+                          <div class="ingridients__text">Зелень</div>
+                        </div>
+                        <div class="ingridients_weight">70 г</div>
+                    </li>
+                    <li class="ingridients__item">
+                        <div class="ingridients__left">
+                          <div class="ingridients__picture ingridients__picture--sauce"></div>
+                          <div class="ingridients__text">Соус</div>
+                        </div>
+                        <div class="ingridients_weight">150 г</div>
+                    </li>
+                    <li class="ingridients__item">
+                        <div class="ingridients__left">
+                          <div class="ingridients__picture ingridients__picture--cucumber"></div>
+                          <div class="ingridients__text">Овощи</div>
+                        </div>
+                        <div class="ingridients_weight">200 г</div>
+                    </li>
+                    <li class="ingridients__item">
+                        <div class="ingridients__left">
+                          <div class="ingridients__picture ingridients__picture--cheese"></div>
+                          <div class="ingridients__text">Сыр</div>
+                        </div>
+                        <div class="ingridients_weight">80 г</div>
+                    </li>
+                  </ul>
 
-             </div>
-           </div>
-           <img src="./images/burger_img.png" alt="black burger" class="burger-page__img">
-            <div class="kkal">
+        
+              </div>
+              </div>
+              <div class="kkal">
                 <svg class="kkal__icon">
                     <use xlink:href="./images/sprite.svg#kkal"></use>
-                  </svg>
-                  <div class="kkal__value">1200</div>
-                  <div class="kkal__def">ккал</div>
-            </div>
-
+                </svg>
+                <div class="kkal__value">1200</div>
+                <div class="kkal__def">ккал</div>
+              </div>
+             </li>
+           </ul>
          </div>
-         <div class="burger-page__desc">
-           <h2 class="title title--white">Dark BEEF Burger</h2>
-           <div class="burger-page__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</div>
-         <div class="burger-page__order">
-           <div class="burger-page__price">500</div>
-           <div class="burger-page__rub">рублей</div>
-           <button type="button" class="btn">Заказать</button>
+         <div class="slider__scroll">
+           <a href="" class="slider__scroll-left"><svg class="slider__scroll-icon slider__scroll-icon--left">
+              <use xlink:href="./images/sprite.svg#arrowscroll"></use>
+            </svg></a>
+           <a href="" class="slider__scroll-right"><svg class="slider__scroll-icon slider__scroll-icon--right">
+              <use xlink:href="./images/sprite.svg#arrowscroll"></use>
+            </svg></a>
          </div>
-          </div>
 
        </div>
       </div>
@@ -471,5 +531,6 @@
     </ul>
     </aside>  
   </div>
+  <script src="./main.js"></script>
 </body>
 </html>

@@ -1,14 +1,20 @@
 .kkal {position: absolute;
-  bottom: rem(140px);
+  left: 0;bottom: 0;
   color: #fff;
   text-transform: uppercase;
   font-family: 'gagalin', serif;
+
+  @include tablets {
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: auto;
+  }
 }
 
-.kkal__icon {position: relative;
+.kkal__icon {
   width: rem(60px);
   height: rem(60px);
-
 }
 
 .kkal__value {position: absolute;

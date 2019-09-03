@@ -1,21 +1,71 @@
-.ingridients__logo { position: absolute;
-  top: rem(100px);
+
+.ingridients {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
-justify-content: center;
+justify-content: space-around;
 align-items: center;
 flex-direction: column;
 background-color: #f08c33;
 height: rem(90px);
 width: rem(90px);
 border-radius: 4px;
+&:hover {background-color: #e35028;
+}
+&:hover .ingridients__down {display: block;}
+
+
 }
 
 .ingridients__icon {width: rem(45px);
 height: rem(45px);
-margin-bottom: rem(5px);};
+margin-left: 3px;
+}
+
 
 .ingridients__name {color: #fff;
 text-transform: uppercase;
 font-family: 'gagalin', serif;
+text-align: center;
 }
 
+.ingridients__down {position: absolute;
+  top: 0;left: 100%;
+  background: rgba($color: #fff, $alpha: 0.9);
+  border-radius: 4px;
+  display: none;
+}
+
+.ingridients__item {display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+width: 100%;
+padding: rem(15px);
+font-family: 'ubuntu' serif;
+font-weight: 400;
+}
+.ingridients__picture  {
+ height: rem(43px);
+ width: rem(48px);
+ background-position: center center;
+ background-size: contain;
+ background-repeat: no-repeat;
+ margin-right: rem(20px);
+
+  &--beef {background-image: url(./../images/beef.png);}
+  &--bun {background-image: url(./../images/bun.png);}
+  &--salad {background-image: url(./../images/salad.png);}
+  &--sauce {background-image: url(./../images/sauce.png);}
+  &--cucumber {background-image: url(./../images/cucumber.png);}
+  &--cheese {background-image: url(./../images/cheese.png);}
+}
+.ingridients__left {display: flex;
+  align-items: center;
+}
+.ingridients__text {
+
+}
+.ingridients_weight {text-align: right;
+  min-width: rem(100px);}
