@@ -5,7 +5,7 @@
 width: rem(25px);
 display: flex; 
 flex-direction: column;
-z-index: 10;
+z-index: 19;
 display: none;
 @include tablets {
 display: flex;
@@ -20,20 +20,6 @@ display: flex;
 }
 
 
-.hamb-menu__page {position: fixed; 
-  display: flex;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: rgba($gray, 0.99);
-  z-index: 15;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
-transition: all 0.4s;
-}
-
 .hamb-menu__close {
   position: absolute;
   top: rem(30px);right: rem(30px);
@@ -41,5 +27,5 @@ display: block;
 height: rem(20px);
 width: rem(20px);
 background: url(./../images/close.png);
-
+display: none;
 }

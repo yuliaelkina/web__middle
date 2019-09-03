@@ -1,11 +1,23 @@
 
 .menu {margin-left: auto;
-}
+@include tablets {display: none;}
 
-.menu--hamb {margin-left: 0;
-min-width: 40%;
-}
 
+&--hamb {position: fixed; 
+  display: flex;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba($gray, 0.99);
+  z-index: 20;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+transition: all 0.4s;
+}
+}
+.menu--hamb .hamb-menu__close {display: block;}
 .menu__list {
   display: flex;
   height: 100%;
@@ -16,7 +28,7 @@ min-width: 40%;
 
 }
 
-.menu__list--hamb {
+.menu--hamb .menu__list {
   flex-direction: column;
   align-content: center;
   margin-right: 0;
@@ -48,7 +60,7 @@ min-width: 40%;
 }
 
 
-.menu__item--hamb {display: flex;
+.menu--hamb .menu__item {display: flex;
 flex-direction: column;
 text-align: center; 
 align-items: center;
@@ -56,17 +68,14 @@ margin-right: 0;
 margin-bottom: 20px;
 }
 
-.menu__item--hamb::after  {
+.menu--hamb .menu__item::after  {
   display: block; 
   margin-left: 0; 
   margin-top: 20px;
   
 }
 
-.menu__item--hamb:last-child::after {
+.menu--hamb .menu__item:last-child::after {
   display: none;
 }
 
-.menu--main {
-  @include tablets {display: none;}
-}
