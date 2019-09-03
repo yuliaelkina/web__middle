@@ -1,18 +1,26 @@
 
-let menu = document.querySelector('.menu');
+let menu = document.querySelector('.menu--hamb');
 let body = document.querySelector('body');
-let items = document.querySelectorAll('.menu__item');
+let items = document.querySelectorAll('.menu__item--hamb');
 let burger = document.querySelector('.hamb-menu__button');
 let close = document.querySelector('.hamb-menu__close');
 
-
-
-function toggleMenu(){
-  menu.classList.toggle('menu--hamb');
-  body.classList.toggle('body--active-menu');
+function openMenu(){
+  menu.style.opacity = '1';
+  menu.style.left = '0%';
+  body.classList.add('body--active-menu');
 }
+
+function closeMenu(){
+  menu.style.opacity = '0';
+  menu.style.left = '130%';
+  body.classList.remove('body--active-menu');
+}
+
+burger.addEventListener('click' , openMenu);
+
+close.addEventListener('click' , closeMenu);
+
 items.forEach(function(element){
-  element.addEventListener('click' , toggleMenu);
+  element.addEventListener('click' , closeMenu);
 })
-burger.addEventListener('click' , toggleMenu);
-close.addEventListener('click' , toggleMenu);
