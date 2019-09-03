@@ -488,7 +488,6 @@ li {
   overflow: hidden; }
 
 .page {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -567,7 +566,7 @@ li {
     right: 0;
     left: 0;
     background: rgba(47, 50, 52, 0.99);
-    z-index: 20;
+    z-index: 15;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -664,7 +663,7 @@ li {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  z-index: 19;
+  z-index: 7;
   display: none; }
   @media screen and (max-width: 768px) {
     .hamb-menu__button {
