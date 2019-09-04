@@ -17,10 +17,17 @@ function closeMenu(){
   body.classList.remove('body--active-menu');
 }
 
-burger.addEventListener('click' , openMenu);
+burger.addEventListener('click' , function(e){
+  e.preventDefault();
+  openMenu();
+});
 
-close.addEventListener('click' , closeMenu);
+close.addEventListener('click' , function(e){
+  e.preventDefault(); 
+  closeMenu();
+});
+
 
 items.forEach(function(element){
-  element.addEventListener('click' , closeMenu);
+  element.addEventListener('click' , closeMenu());
 })
