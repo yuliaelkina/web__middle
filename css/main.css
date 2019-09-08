@@ -536,20 +536,16 @@ li {
   -ms-flex-line-pack: center;
   align-content: center; }
 
-.logo {
-  max-width: 5.75rem;
-  min-width: 5rem;
-  min-height: 3.75rem;
-  max-height: 4.3125rem; }
-
 .logo--hamb {
   position: absolute;
   top: 10px;
   left: 20px; }
 
 .logo__img {
-  height: 100%;
-  width: 100%; }
+  max-width: 5.75rem;
+  min-width: 5rem;
+  min-height: 3.75rem;
+  max-height: 4.3125rem; }
 
 .menu {
   margin-left: auto; }
@@ -1272,16 +1268,20 @@ li {
     transform: rotate(180deg); }
 
 .team__item-desc {
+  height: 0;
+  padding-top: 1.25rem;
+  overflow: hidden;
+  -webkit-transition: .6s;
+  -o-transition: .6s;
+  transition: .6s; }
+
+.team__item-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  height: 0;
-  overflow: hidden;
-  padding-top: 1.25rem;
-  overflow: hidden; }
+  width: 100%; }
   @media screen and (max-width: 768px) {
-    .team__item-desc {
+    .team__item-wrap {
       padding-top: 0; } }
 
 .team__item-avatar {
@@ -1498,6 +1498,50 @@ li {
       height: 0;
       overflow: hidden; } }
 
+.popup {
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  width: 90%;
+  left: 5%;
+  right: auto;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  display: none;
+  opacity: 0; }
+
+.popup--active {
+  display: block;
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
+
+.popup__title {
+  color: #000;
+  text-transform: uppercase;
+  font-family: 'gagalin', serif;
+  text-align: left;
+  margin-left: 1.25rem;
+  margin-top: 1.5625rem; }
+
+.popup__close {
+  position: absolute;
+  top: 1.5625rem;
+  right: 1.25rem;
+  background: url(./../images/close_popup.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 0.9375rem;
+  height: 0.9375rem; }
+
+.popup__text {
+  margin-top: 1.875rem;
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+  margin-bottom: 1.875rem; }
+
 .work {
   background: url(./../images/video_bg.jpg) center center/cover no-repeat; }
 
@@ -1701,6 +1745,9 @@ li {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+  @media screen and (max-width: 480px) {
+    .social__list {
+      padding-bottom: 0.375rem; } }
 
 .social__item {
   margin-right: 1.25rem;

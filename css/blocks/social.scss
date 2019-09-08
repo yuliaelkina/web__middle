@@ -1,5 +1,7 @@
 .social__list {display: flex;
   align-items: center;
+
+  @include phones {padding-bottom: rem(6px);};
 }
 .social__item {margin-right: rem(20px);
 opacity: 0.3; 
