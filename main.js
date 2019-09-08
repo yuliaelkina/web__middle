@@ -30,10 +30,10 @@ close.addEventListener('click' , function(e){
 
 items.forEach(function(element){
   element.addEventListener('click' , closeMenu)}
-  )
+  );
+  
 
-
-
+  
 function accordeonTeam() {
 const workers = document.querySelectorAll(".team__item");
 const team = document.querySelector(".team__list");
@@ -140,3 +140,24 @@ function accordeonMenu() {
   };
   
   accordeonMenu();
+
+
+  function burgerSlider() {
+    const slider = document.querySelector(".slider__list");
+    
+    document.querySelector(".slider__scroll-left").addEventListener ("click", elem =>
+    {elem.preventDefault();
+    loop ("left");
+    });
+    document.querySelector(".slider__scroll-right").addEventListener ("click", elem =>
+    {elem.preventDefault();
+    loop ("right");
+    });  };
+    
+    function loop(direction) {const slider = document.querySelector(".slider__list");
+      if(direction === "right") {slider.appendChild(slider.firstElementChild)}
+      else {slider.insertBefore(slider.lastElementChild, slider.firstElementChild)}
+      };
+  
+    
+burgerSlider();
