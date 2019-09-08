@@ -60,9 +60,11 @@ display: flex;
   z-index: 5;
   
 }
-.menu-page__item--active p {padding: rem(15px); }
+
 .menu-page__item--active .menu-page__text {
   width: rem(540px);
 @include tablets {width: rem(360px)}
 }
+.menu-page__item--active p {padding: rem(15px); }
+
 .menu-page__item--active .menu-page__ttl {color: $yellow;}

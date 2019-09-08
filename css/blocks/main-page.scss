@@ -6,10 +6,13 @@
 }
 
 
-.main-page {align-self: center; 
+.main-page {
 display: flex;
+align-self: center; 
 align-items: center;
-flex: 1;
+justify-content: center;
+flex: 0.93;
+padding-bottom: rem(40px);
 
 @include tablets {flex-direction: column;}
 }

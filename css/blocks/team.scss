@@ -53,7 +53,7 @@ transform: rotate(180deg);
   height: 0;
   padding-top: rem(20px);
  overflow: hidden;
-transition: .6s;
+transition: .5s;
 }
 
 .team__item-wrap {display: flex;
@@ -67,11 +67,11 @@ padding-top: 0;}
   height: rem(100px); 
   width: rem(100px);
   border-radius: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-right: rem(20px);
   flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  margin-right: rem(20px);
 
   @include tablets {margin-bottom: rem(25px);
   align-self: center;}
@@ -82,8 +82,9 @@ padding-top: 0;}
 &::before {transform: rotate(0deg);}
 } 
 
-.team__item--active .team__item-desc {min-height: rem(140px);
-@include tablets {display: flex;
+.team__item--active .team__item-desc {
+
+  @include tablets {display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
