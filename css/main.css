@@ -1295,7 +1295,7 @@ li {
   -ms-flex-negative: 0;
   flex-shrink: 0;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center center;
   margin-right: 1.25rem; }
   @media screen and (max-width: 768px) {

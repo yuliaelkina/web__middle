@@ -133,7 +133,7 @@ function accordeonMenu() {
   console.log(screen);
   if(screen > 768) {
   content.style.width = 540 + "px";}
-  else {content.style.width = 340 + "px";}
+  else {content.style.width = screen - 240 + "px";}
   }
   }
   });
