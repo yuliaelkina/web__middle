@@ -167,19 +167,46 @@ burgerSlider();
 
 const myForm = document.querySelector(".form__elem");
 const send = document.querySelector("#sendButton");
-const formMessage = document.querySelector(".form__message");
 
 
 send.addEventListener("click", e=>{
 e.preventDefault();
+const formData = new FormData(myForm);
+formData.append("to", "test@mail.com");
+formData.append("name", myForm.elements.name.value);
+formData.append("name", myForm.elements.name.value);
+formData.append("name", myForm.elements.name.value);
 
- if (!ValidateForm(myForm)) {
- formMessage.style.display = 'block';
-  }
-  else {
-  }
+if (ValidateForm(myForm)) {
+const xhr = new XMLHttpRequest();
+const form__popup = document.querySelector(".form__popup");
 
+  xhr.open ('post', 'https://webdev-api.loftschool.com/sendmail');
+  xhr.send(formData);
+  xhr.responseType = "json";
+  xhr.addEventListener("load", e=>{
+    if(xhr.response.status) {
+      form__popup.style.dispay = "block";
+      form__popup.innerHTML = "Отправлено";
+      myForm.reset();
+      window.addEventListener ("click", e=>{
+        e.preventDefault();
+        form__popup.style.dispay = "none";
+      })
+      }
+    else {form__popup.style.dispay = "block";
+    form__popup.innerHTML = "Ошибка";
+    window.addEventListener ("click", e=>{
+      e.preventDefault();
+      form__popup.style.dispay = "none";
+    })
+    }
+    
+    })
+}
 })
+
+
 
 function ValidateForm (form) {
   let valid = true;
@@ -197,7 +224,7 @@ function ValidateForm (form) {
 }
 
 function ValidateField(field) {
- formMessage.textContent = "Не все обязательные поля заполнены!";
+ field.nextElementSibling.textContent = field.validationMessage;
   return field.checkValidity();
 }
 

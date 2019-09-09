@@ -1590,6 +1590,7 @@ li {
   display: flex; }
 
 .form__block {
+  position: relative;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -1701,13 +1702,18 @@ li {
     opacity: 0; }
 
 .form__message {
-  position: fixed;
-  background-color: #fff;
-  top: 30%;
-  left: 10%;
-  width: 80%;
+  position: absolute;
   color: #c1401e;
-  display: none; }
+  bottom: 0;
+  left: 0; }
+
+.form__popup {
+  position: fixed;
+  top: 50%;
+  left: 37%;
+  background-color: #fff;
+  color: #c1401e;
+  padding: 1.875rem; }
 
 .footer {
   background: #121212; }
