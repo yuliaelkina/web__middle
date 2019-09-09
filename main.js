@@ -167,7 +167,9 @@ burgerSlider();
 
 const myForm = document.querySelector(".form__elem");
 const send = document.querySelector("#sendButton");
-
+const successOverlay = createOverlay("Ваш заказ отправлен!");
+const failOverlay = createOverlay("Что-то пошло не так, пожалуйста, попробуйте еще раз!");
+console.log(failOverlay);
 
 send.addEventListener("click", e=>{
 e.preventDefault();
@@ -178,31 +180,22 @@ formData.append("name", myForm.elements.name.value);
 formData.append("name", myForm.elements.name.value);
 
 if (ValidateForm(myForm)) {
+  console.log("форма ок");
 const xhr = new XMLHttpRequest();
-const form__popup = document.querySelector(".form__popup");
 
   xhr.open ('post', 'https://webdev-api.loftschool.com/sendmail');
   xhr.send(formData);
   xhr.responseType = "json";
   xhr.addEventListener("load", e=>{
     if(xhr.response.status) {
-      form__popup.style.dispay = "block";
-      form__popup.innerHTML = "Отправлено";
+      console.log("отправка ок");
+     myForm.appendChild(successOverlay);
       myForm.reset();
-      window.addEventListener ("click", e=>{
-        e.preventDefault();
-        form__popup.style.dispay = "none";
-      })
       }
-    else {form__popup.style.dispay = "block";
-    form__popup.innerHTML = "Ошибка";
-    window.addEventListener ("click", e=>{
-      e.preventDefault();
-      form__popup.style.dispay = "none";
-    })
-    }
     
-    })
+else {myForm.appendChild(failOverlay);
+}
+})
 }
 })
 
@@ -229,6 +222,17 @@ function ValidateField(field) {
 }
 
 
+function createOverlay(overlayText) {
+  const overlayElement = document.createElement("div");
+  overlayElement.classList.add("overlay");
 
+  const template = document.querySelector("#overlayTemplate");
+  overlayElement.innerHTML = template.innerHTML;
+
+  const contentElement = overlayElement.querySelector(".overlay__text");
+  contentElement.innerHTML = overlayText;
+  overlayElement.addEventListener("click", function() {myForm.removeChild(overlayElement)});
+ return overlayElement;
+}
 
 

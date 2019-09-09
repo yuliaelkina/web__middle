@@ -1707,13 +1707,27 @@ li {
   bottom: 0;
   left: 0; }
 
-.form__popup {
+.overlay {
   position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); }
+
+.overlay__text {
+  position: absolute;
   top: 50%;
-  left: 37%;
-  background-color: #fff;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: #fff;
   color: #c1401e;
-  padding: 1.875rem; }
+  padding: 1.875rem;
+  -webkit-box-flex: 0.2;
+  -ms-flex: 0.2;
+  flex: 0.2; }
 
 .footer {
   background: #121212; }
