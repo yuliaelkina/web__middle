@@ -1700,6 +1700,15 @@ li {
     transform: translate(-50%, -50%) rotate(-45deg);
     opacity: 0; }
 
+.form__message {
+  position: fixed;
+  background-color: #fff;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  color: #c1401e;
+  display: none; }
+
 .footer {
   background: #121212; }
 

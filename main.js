@@ -161,3 +161,47 @@ function accordeonMenu() {
   
     
 burgerSlider();
+
+
+//
+
+const myForm = document.querySelector(".form__elem");
+const send = document.querySelector("#sendButton");
+const formMessage = document.querySelector(".form__message");
+
+
+send.addEventListener("click", e=>{
+e.preventDefault();
+
+ if (!ValidateForm(myForm)) {
+ formMessage.style.display = 'block';
+  }
+  else {
+  }
+
+})
+
+function ValidateForm (form) {
+  let valid = true;
+  if(!ValidateField(form.elements.name)) {
+    valid = false;
+  }
+  else if(!ValidateField(form.elements.phone)) {
+    valid = false;
+  }
+  else if(!ValidateField(form.elements.comment)) {
+    valid = false;
+  }
+  return valid;
+ 
+}
+
+function ValidateField(field) {
+ formMessage.textContent = "Не все обязательные поля заполнены!";
+  return field.checkValidity();
+}
+
+
+
+
+

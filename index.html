@@ -643,11 +643,11 @@
               <div class="form__row">
                 <label class="form__block">
                   <div class="form__block-title">Имя</div>
-                  <input type="text" class="form__input">
+                  <input name="name" type="text" class="form__input" required>
                 </label>
           <label class="form__block">
             <div class="form__block-title">Телефон</div>
-            <input type="text" class="form__input" placeholder="89219453212">
+            <input type="text" name="phone" class="form__input" placeholder="89219453212" required>
           </label>
         </div>
         <div class="form__row">
@@ -679,7 +679,7 @@
         <div class="form__row">
           <label class="form__block">
             <div class="form__block-title">Комментарий</div>
-            <textarea class="form__input form__input--textarea" placeholder="Ваши пожелания"></textarea>
+            <textarea name="comment" class="form__input form__input--textarea" placeholder="Ваши пожелания" required></textarea>
           </label>
         </div>
         <div class="form__buttons">
@@ -703,12 +703,13 @@
              </label>
           </div>
           <div class="form__row">
-            <button type="submit" class="btn">Заказать</button>
+            <button type="submit" id="sendButton" class="btn">Заказать</button>
             <button type="reset" class="btn btn-clear">Очистить</button>
           </div>
         </div>
       </div>
     </form>
+    <div class="form__message"></div>
   </div>
 </div>
   </section>

@@ -115,3 +115,13 @@ opacity: 0;
 
 }
 }
+
+.form__message {
+  position: fixed;
+  background-color: #fff;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  color: $red;
+display: none;
+}
