@@ -252,27 +252,29 @@ performTransition(target);
 
 });
 
+$(window).on('touchmove', e=>e.preventDefault());
+
 if(isMobile){
 
 
 $(function() {
   $(".wrapper").swipe( {
     swipe:function(event, direction) {
-    
-      event.preventDefault();
-     let scrollDirection;
+alert(direction);
+     ///let scrollDirection;
      
-     if(direction === up){
-      scrollDirection = "next";
-     }
-     else if(direction === down){
-      scrollDirection = "prev";
-     }
+    //if(direction === up){
+     // scrollDirection = "next";
+    // }
+    // else if(direction === down){
+     // scrollDirection = "prev";
+    // }
 
-     scrollViewport(scrollDirection);
+    
     }
   });
-});
+}); 
+scrollViewport(scrollDirection);
 }
 ///
 const myForm = document.querySelector(".form__elem");
