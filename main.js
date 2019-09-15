@@ -392,31 +392,47 @@ else{
 }
 }
 
-
+//
 
 const sections = $(".page");
 const display = $(".maincontent");
+;
 let inscroll = false;
 const md = new MobileDetect(window.navigator.userAgent);
 const isMobile = md.mobile();
 
-const performTransition = sectionEq => {
-if(inscroll === false){
-  inscroll = true;
- const position = `${sectionEq * (-100)}%`;
-sections
-.eq(sectionEq)
+const countPosition = sectionEq => {
+ return `${sectionEq * (-100)}%`;
+}
+
+const switchActiveClass = (elems, elemEq) => {
+elems
+.eq(elemEq)
 .addClass("is-active")
 .siblings()
 .removeClass("is-active")
+}
+
+const performTransition = sectionEq => {
+if(inscroll) return;
+inscroll = true; 
+const position = countPosition(sectionEq);
+
+const switchMenuActiveClass = () => {
+ switchActiveClass($(".pagination__item"), sectionEq); 
+}
+
+switchMenuActiveClass();
+switchActiveClass(sections, sectionEq);
+
+
 
 display.css({
-  transform: `translateY(${position})`}) 
+  transform: `translateY(${position})`});
   setTimeout(()=>{
     inscroll = false;
   },1000 + 300);
-}
-}
+};
 
 const scrollViewport = direction =>{
 
@@ -444,7 +460,7 @@ $(document).on('wheel', e=>{
 $(document).on('keydown', e=>{
 const tagName = e.target.tagName.toLowerCase();
 const userTypingInInputs = tagName === 'input' || tagName === 'textarea';
-if(userTypingInInputs === false){
+if(userTypingInInputs) return;
  switch(e.keyCode) {
     case 38:
       scrollViewport("prev");
@@ -453,7 +469,6 @@ if(userTypingInInputs === false){
       scrollViewport("next");
       break;
   } 
-}
 });
 
 
@@ -488,3 +503,4 @@ $(function() {
   });
 });
 }
+

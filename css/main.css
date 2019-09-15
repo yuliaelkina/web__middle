@@ -419,6 +419,10 @@ html {
 html, body {
   height: 100%; }
 
+body {
+  -ms-touch-action: none;
+  touch-action: none; }
+
 button {
   outline: none;
   background: transparent;
