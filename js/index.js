@@ -165,7 +165,116 @@ burgerSlider();
 
 
 //
+const sections = $(".page");
+const display = $(".maincontent");
+;
+let inscroll = false;
+const md = new MobileDetect(window.navigator.userAgent);
+const isMobile = md.mobile();
 
+const countPosition = sectionEq => {
+ return `${sectionEq * (-100)}%`;
+}
+
+const switchActiveClass = (elems, elemEq) => {
+elems
+.eq(elemEq)
+.addClass("is-active")
+.siblings()
+.removeClass("is-active")
+}
+
+const performTransition = sectionEq => {
+if(inscroll) return;
+inscroll = true; 
+const position = countPosition(sectionEq);
+
+const switchMenuActiveClass = () => {
+ switchActiveClass($(".pagination__item"), sectionEq); 
+}
+
+switchMenuActiveClass();
+switchActiveClass(sections, sectionEq);
+
+
+
+display.css({
+  transform: `translateY(${position})`});
+  setTimeout(()=>{
+    inscroll = false;
+  },1000 + 300);
+};
+
+const scrollViewport = direction =>{
+
+  const activeSection = sections.filter('.is-active');
+  const nextSection = activeSection.next();
+  const prevSection = activeSection.prev();
+
+  if(direction === "next" && nextSection.length){performTransition(nextSection.index());}
+  else if(direction === "prev" && prevSection.length){performTransition(prevSection.index());}
+}
+
+$(document).on('wheel', e=>{
+  const deltaY = e.originalEvent.deltaY;
+
+  if(deltaY > 0){
+    scrollViewport("next");
+  }
+  if(deltaY < 0){
+  
+    scrollViewport("prev");
+  }
+
+});
+
+$(document).on('keydown', e=>{
+const tagName = e.target.tagName.toLowerCase();
+const userTypingInInputs = tagName === 'input' || tagName === 'textarea';
+if(userTypingInInputs) return;
+ switch(e.keyCode) {
+    case 38:
+      scrollViewport("prev");
+      break;
+    case 40:
+      scrollViewport("next");
+      break;
+  } 
+});
+
+
+
+$('[data-scroll-to]').on('click' , e=>{
+e.preventDefault();
+const target = $(e.currentTarget).attr("data-scroll-to");
+
+performTransition(target);
+
+});
+
+if(isMobile){
+$('.wrapper').addEventListener('click', e=>{
+  e.preventDefault();
+});
+
+$(function() {
+  $('.wrapper').swipe( {
+    swipe:function(event, direction) {
+     let scrollDirection;
+     
+     if(direction === up){
+      scrollDirection = "next";
+     }
+     else if(direction === down){
+      scrollDirection = "prev";
+     }
+
+     scrollViewport(scrollDirection);
+    }
+  });
+});
+}
+///
 const myForm = document.querySelector(".form__elem");
 const send = document.querySelector("#sendButton");
 const successOverlay = createOverlay("Ваш заказ отправлен!");
@@ -394,114 +503,4 @@ else{
 }
 
 //
-
-const sections = $(".page");
-const display = $(".maincontent");
-;
-let inscroll = false;
-const md = new MobileDetect(window.navigator.userAgent);
-const isMobile = md.mobile();
-
-const countPosition = sectionEq => {
- return `${sectionEq * (-100)}%`;
-}
-
-const switchActiveClass = (elems, elemEq) => {
-elems
-.eq(elemEq)
-.addClass("is-active")
-.siblings()
-.removeClass("is-active")
-}
-
-const performTransition = sectionEq => {
-if(inscroll) return;
-inscroll = true; 
-const position = countPosition(sectionEq);
-
-const switchMenuActiveClass = () => {
- switchActiveClass($(".pagination__item"), sectionEq); 
-}
-
-switchMenuActiveClass();
-switchActiveClass(sections, sectionEq);
-
-
-
-display.css({
-  transform: `translateY(${position})`});
-  setTimeout(()=>{
-    inscroll = false;
-  },1000 + 300);
-};
-
-const scrollViewport = direction =>{
-
-  const activeSection = sections.filter('.is-active');
-  const nextSection = activeSection.next();
-  const prevSection = activeSection.prev();
-
-  if(direction === "next" && nextSection.length){performTransition(nextSection.index());}
-  else if(direction === "prev" && prevSection.length){performTransition(prevSection.index());}
-}
-
-$(document).on('wheel', e=>{
-  const deltaY = e.originalEvent.deltaY;
-
-  if(deltaY > 0){
-    scrollViewport("next");
-  }
-  if(deltaY < 0){
-  
-    scrollViewport("prev");
-  }
-
-});
-
-$(document).on('keydown', e=>{
-const tagName = e.target.tagName.toLowerCase();
-const userTypingInInputs = tagName === 'input' || tagName === 'textarea';
-if(userTypingInInputs) return;
- switch(e.keyCode) {
-    case 38:
-      scrollViewport("prev");
-      break;
-    case 40:
-      scrollViewport("next");
-      break;
-  } 
-});
-
-
-
-$('[data-scroll-to]').on('click' , e=>{
-e.preventDefault();
-const target = $(e.currentTarget).attr("data-scroll-to");
-
-performTransition(target);
-
-});
-
-if(isMobile){
-$('.wrapper').addEventListener('click', e=>{
-  e.preventDefault();
-},{passive: false});
-
-$(function() {
-  $('.wrapper').swipe( {
-    swipe:function(event, direction) {
-     let scrollDirection;
-     
-     if(direction === up){
-      scrollDirection = "next";
-     }
-     else if(direction === down){
-      scrollDirection = "prev";
-     }
-     
-     scrollViewport(scrollDirection);
-    }
-  });
-});
-}
 

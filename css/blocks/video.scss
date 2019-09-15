@@ -17,7 +17,7 @@ transform: translate(-50%, -50%);
   align-items: center;
   height: 35px;
 width: 100%;
-background-color: $gray;
+background-color: #3e3e3e;
 }
 .duration {display: flex; width: 80%;}
 .duration__play {margin-left: 5px;
@@ -26,6 +26,11 @@ background-color: $gray;
   width: 95%;}
 
   .sound {display: flex;align-items: center;}
+  
+  .duration__lenght {align-self: center;
+    height: 4px;
+    color: #626262;
+  }
   .duration__lenght--volume {margin-left: 5px;
     margin-right: 5px;
     width: rem(90px);
