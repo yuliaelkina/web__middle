@@ -1,4 +1,5 @@
 
+
 let menu = document.querySelector('.menu--hamb');
 let body = document.querySelector('body');
 let items = document.querySelectorAll('.menu__item--hamb');
@@ -482,7 +483,7 @@ performTransition(target);
 });
 
 if(isMobile){
-window.addEventListener('click', e=>{
+$('.wrapper').addEventListener('click', e=>{
   e.preventDefault();
 },{passive: false});
 
@@ -497,7 +498,7 @@ $(function() {
      else if(direction === down){
       scrollDirection = "prev";
      }
-
+     
      scrollViewport(scrollDirection);
     }
   });
