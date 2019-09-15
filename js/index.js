@@ -253,13 +253,13 @@ performTransition(target);
 });
 
 if(isMobile){
-$('.wrapper').addEventListener('click', e=>{
-  e.preventDefault();
-});
+
 
 $(function() {
-  window.swipe( {
+  $(".wrapper").swipe( {
     swipe:function(event, direction) {
+    
+      event.preventDefault();
      let scrollDirection;
      
      if(direction === up){

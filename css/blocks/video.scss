@@ -2,7 +2,7 @@
   align-self: center;
 @include phones {max-width: rem(350px);}
 }
-.video__screen{ width: fit-content;
+.video__screen{ width: 100%;
   position: relative;
   overflow: hidden;
   margin-bottom: -4px;
