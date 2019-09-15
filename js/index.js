@@ -258,7 +258,7 @@ $('.wrapper').addEventListener('click', e=>{
 });
 
 $(function() {
-  $('.wrapper').swipe( {
+  window.swipe( {
     swipe:function(event, direction) {
      let scrollDirection;
      

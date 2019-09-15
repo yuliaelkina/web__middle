@@ -1,5 +1,6 @@
 .video {max-width: rem(640px);
   align-self: center;
+@include phones {max-width: rem(350px);}
 }
 .video__screen{ width: fit-content;
   position: relative;
