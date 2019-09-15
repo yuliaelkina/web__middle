@@ -256,9 +256,9 @@ $(window).on('touchmove', e=>e.preventDefault());
 
 if(isMobile){
 
-  $(".wrapper").swipe( {
+  $("body").swipe( {
     swipe:function(event, direction) {
-alert(direction);
+
     let scrollDirection;
      
     if(direction === up){
