@@ -1,0 +1,6 @@
+.video__screen {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  overflow: hidden; }

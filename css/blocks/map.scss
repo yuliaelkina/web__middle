@@ -1,0 +1,17 @@
+.map__hint {
+  padding: rem(5px);
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+.map__balloon {display: flex;
+  padding: rem(5px);
+  border-radius: 4px;
+  font-size: 11px;
+
+}
+.map__title {font-family: 'gagalin', serif;
+  font-size: rem(13px);}
+.map__text {margin-left: rem(10px);
+font-size: rem(12px);
+}

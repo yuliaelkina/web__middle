@@ -169,7 +169,7 @@ const myForm = document.querySelector(".form__elem");
 const send = document.querySelector("#sendButton");
 const successOverlay = createOverlay("Ваш заказ отправлен!");
 const failOverlay = createOverlay("Что-то пошло не так, пожалуйста, попробуйте еще раз!");
-console.log(failOverlay);
+
 
 send.addEventListener("click", e=>{
 e.preventDefault();
@@ -187,7 +187,7 @@ const xhr = new XMLHttpRequest();
   xhr.send(formData);
   xhr.responseType = "json";
   xhr.addEventListener("load", e=>{
-    if(xhr.response.status) {
+    if(xhr.response.status < 200) {
       console.log("отправка ок");
      myForm.appendChild(successOverlay);
       myForm.reset();
@@ -231,8 +231,260 @@ function createOverlay(overlayText) {
 
   const contentElement = overlayElement.querySelector(".overlay__text");
   contentElement.innerHTML = overlayText;
-  overlayElement.addEventListener("click", function() {myForm.removeChild(overlayElement)});
+  overlayElement.addEventListener("click", function(e) {
+    if(e.target === overlayElement){
+    myForm.removeChild(overlayElement)}});
  return overlayElement;
 }
 
+ymaps.ready(init);
+var placemarks = [
+  {
+    latitude: 59.97,
+    longitude: 30.31,
+    hintContent: '<div class="map__hint"> ул. Литераторов, 19</div>',
+    balloonContent: ['<div class="map__balloon">',
+    '<svg class="logo__img"><use xlink:href="./images/sprite.svg#logo"></use></svg>',
+    '<div class="map__text"><div class="map__title">Лучшие бургеры</div>ежедневно с 10:00 до 22:00<br> ул. Литераторов, 19</div>',
+    '</div>']
+  },
+  {
+    latitude: 59.94,
+    longitude: 30.38,
+    hintContent: '<div class="map__hint">Суворовский пр., 54</div>',
+    balloonContent: ['<div class="map__balloon">',
+    '<svg class="logo__img"><use xlink:href="./images/sprite.svg#logo"></use></svg>',
+    '<div class="map__text"><div class="map__title">Лучшие бургеры</div>ежедневно с 10:00 до 21:00<br>Суворовский пр., 54</div>',
+    '</div>']
+  },
+  {
+    latitude: 59.89,
+    longitude: 30.32,
+    hintContent: '<div class="map__hint">Московский пр., 109</div>',
+    balloonContent: ['<div class="map__balloon">',
+    '<svg class="logo__img"><use xlink:href="./images/sprite.svg#logo"></use></svg>',
+    '<div class="map__text"><div class="map__title">Лучшие бургеры</div>ежедневно с 10:00 до 22:00<br>Московский пр., 109</div>',
+    '</div>']
+  },
+  {
+    latitude: 59.91,
+    longitude: 30.50,
+    hintContent: '<div class="map__hint">ул. Дыбенко, 42</div>',
+    balloonContent: ['<div class="map__balloon">',
+    '<svg class="logo__img"><use xlink:href="./images/sprite.svg#logo"></use></svg>',
+    '<div class="map__text"><div class="map__title">Лучшие бургеры</div>ежедневно с 10:00 до 21:00<br>ул. Дыбенко, 42</div>',
+    '</div>']
+  }
+];
+var geoObjects = [];
+function init() {
+  var myMap = new ymaps.Map("map", {
+    center: [59.92, 30.35],
+    zoom: 11,
+    controls: ['zoomControl'],
+    behaviors: ['drag']
+  });
 
+for(var i = 0; i < placemarks.length; i++) {
+  geoObjects[i] = new ymaps.Placemark([placemarks[i].latitude, placemarks[i].longitude], {
+    hintContent: placemarks[i].hintContent,
+    balloonContent: placemarks[i].balloonContent.join('')
+  },
+  { iconLayout: 'default#image',
+   iconImageHref: './images/placemark.png',
+   iconImageSize: [43, 57],
+   iconImageOffset: [-22,-57]
+
+  });
+
+var clusterer = new ymaps.Clusterer({});
+};
+
+myMap.geoObjects.add(clusterer);
+clusterer.add(geoObjects);
+}
+
+
+let video;
+let durationControl;
+let soundControl;
+let intervalId;
+
+document.addEventListener('DOMContentLoaded', e=>{
+video = document.getElementById('video');
+video.addEventListener('click', playStop);
+
+let playButtons = document.querySelectorAll('.play');
+for (var i = 0; i<playButtons.length; i++) {
+  playButtons[i].addEventListener('click', playStop);
+}
+
+let speakControl = document.querySelector('.sound__icon');
+speakControl.addEventListener('click', soundOff);
+
+durationControl = document.getElementById('durationLevel');
+durationControl.addEventListener('mousedown', stopInterval);
+durationControl.addEventListener('click', setVideoDuration);
+
+durationControl.min = 0;
+durationControl.value = 0;
+
+soundControl = document.getElementById('volumeLevel');
+soundControl.addEventListener('click', changeVolume);
+soundControl.addEventListener('mouseup', changeVolume);
+
+soundControl.min = 0;
+soundControl.max = 10;
+soundControl.value = soundControl.max;
+
+});
+
+
+function playStop() {
+let playIcon = document.querySelector('.video__play-icon');
+playIcon.classList.toggle('video__play-icon--active');
+
+durationControl.max = video.duration;
+
+if(video.paused) {
+  video.play();
+  intervalId = setInterval(updateDuration, 1000 /66);
+}
+else {
+  video.pause();
+  clearInterval(intervalId);
+}
+}
+
+function updateDuration(){
+  durationControl.value = video.currentTime;
+}
+
+function stopInterval(){
+  video.pause();
+  clearInterval(intervalId);
+}
+
+function setVideoDuration(){
+  if(video.paused){
+    video.play();
+  }
+  else{video.pause();}
+
+  video.currentTime = durationControl.value;
+  intervalId = setInterval(updateDuration, 1000 /66);
+}
+
+function changeVolume(){
+
+  video.volume = soundControl.value/10;
+}
+
+function soundOff(){
+if(video.volume === 0) {
+  video.volume = soundLevel;
+  soundControl.value = soundLevel*10;
+}
+else{
+  soundLevel = video.volume;
+  video.volume = 0;
+  soundControl.value = 0;
+}
+}
+
+
+
+const sections = $(".page");
+const display = $(".maincontent");
+let inscroll = false;
+const md = new MobileDetect(window.navigator.userAgent);
+const isMobile = md.mobile();
+
+const performTransition = sectionEq => {
+if(inscroll === false){
+  inscroll = true;
+ const position = `${sectionEq * (-100)}%`;
+sections
+.eq(sectionEq)
+.addClass("is-active")
+.siblings()
+.removeClass("is-active")
+
+display.css({
+  transform: `translateY(${position})`}) 
+  setTimeout(()=>{
+    inscroll = false;
+  },1000 + 300);
+}
+}
+
+const scrollViewport = direction =>{
+
+  const activeSection = sections.filter('.is-active');
+  const nextSection = activeSection.next();
+  const prevSection = activeSection.prev();
+
+  if(direction === "next" && nextSection.length){performTransition(nextSection.index());}
+  else if(direction === "prev" && prevSection.length){performTransition(prevSection.index());}
+}
+
+$(document).on('wheel', e=>{
+  const deltaY = e.originalEvent.deltaY;
+
+  if(deltaY > 0){
+    scrollViewport("next");
+  }
+  if(deltaY < 0){
+  
+    scrollViewport("prev");
+  }
+
+});
+
+$(document).on('keydown', e=>{
+const tagName = e.target.tagName.toLowerCase();
+const userTypingInInputs = tagName === 'input' || tagName === 'textarea';
+if(userTypingInInputs === false){
+ switch(e.keyCode) {
+    case 38:
+      scrollViewport("prev");
+      break;
+    case 40:
+      scrollViewport("next");
+      break;
+  } 
+}
+});
+
+
+
+$('[data-scroll-to]').on('click' , e=>{
+e.preventDefault();
+const target = $(e.currentTarget).attr("data-scroll-to");
+
+performTransition(target);
+
+});
+
+if(isMobile){
+window.addEventListener('click', e=>{
+  e.preventDefault();
+},{passive: false});
+
+$(function() {
+  $('.wrapper').swipe( {
+    swipe:function(event, direction) {
+     let scrollDirection;
+     
+     if(direction === up){
+      scrollDirection = "next";
+     }
+     else if(direction === down){
+      scrollDirection = "prev";
+     }
+
+     scrollViewport(scrollDirection);
+    }
+  });
+});
+}

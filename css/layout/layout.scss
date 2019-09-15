@@ -18,9 +18,9 @@ border: none;
 cursor: pointer;
 }
 
-.wrapper {position: relative;
+.wrapper {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   overflow: hidden;
   font-family: 'ubuntu', sans-serif, Arial, Helvetica, sans-serif;
 font-size: rem(14px);
@@ -54,4 +54,11 @@ align-items: center;
 * {box-sizing: border-box;
 }
 
+.container--map {height: 100%; width: 100%;}
+
 .body--active-menu {overflow: hidden;}
+
+.maincontent {height: 100%;
+  transition: transform 1s, 
+  -webkit-transform 1s; 
+}

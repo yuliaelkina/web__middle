@@ -23,9 +23,11 @@
   height: rem(4px);
   margin-left: rem(15px);
   background-color: #fff;
-  border-radius: 50%;}
+  border-radius: 50%;
+  @include small-width {display: none;}}
   
 &:last-child::after {display: none}
+
 }
 
 

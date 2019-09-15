@@ -2,6 +2,12 @@
   @return $px / 16px + 0rem;
 }
 
+@mixin small-width {
+  @media screen and (max-width: 965px) {
+    @content;
+  }
+}
+
 @mixin tablets {
   @media screen and (max-width: 768px) {
     @content;

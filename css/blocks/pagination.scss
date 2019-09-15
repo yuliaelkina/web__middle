@@ -10,14 +10,15 @@
   &:last-child {margin-bottom: 0;} 
  }
 
- .pagination__point {margin: 0;padding: 0;
+ .pagination__point {display: block;
+  margin: 0;padding: 0;
   background-color: #fff;
   border-radius: 50%;
   height: rem(6px);
   width: rem(6px);
 }
 
-.pagination__point--active {
+.is-active > .pagination__point {
   position: relative;
 
 &::before {content: "";
