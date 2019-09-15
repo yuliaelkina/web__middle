@@ -254,9 +254,9 @@ performTransition(target);
 
 $(window).on('touchmove', e=>e.preventDefault());
 
-if(isMobile){
+if(isMobile === true){
 
-  $("body").swipe( {
+  $(window).swipe( {
     swipe:function(event, direction) {
 
     let scrollDirection;
@@ -267,6 +267,7 @@ if(isMobile){
    else if(direction === down){
      scrollDirection = "prev";
     }
+
 scrollViewport(scrollDirection);
     
     }
