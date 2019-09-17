@@ -291,7 +291,7 @@ let onePageScroll = () =>{
         let direct = swipeDirect();
         scrollToPage(direct);
       }, false);
-    }
+   
     function swipeDirect () {
       let deltaY = touchStartY - touchEndY;
       if(deltaY > 100) {
@@ -301,7 +301,7 @@ let onePageScroll = () =>{
         return 'down';
       }
     }
-  
+   }
     function isMobileDevice() {
       return (typeof window.orientation !== undefined);
     }
