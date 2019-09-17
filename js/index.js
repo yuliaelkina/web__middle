@@ -1,4 +1,4 @@
-
+//бургер-меню
 
 let menu = document.querySelector('.menu--hamb');
 let body = document.querySelector('body');
@@ -33,7 +33,7 @@ items.forEach(function(element){
   element.addEventListener('click' , closeMenu)}
   );
   
-
+/////аккордеон вертикальный
   
 function accordeonTeam() {
 const workers = document.querySelectorAll(".team__item");
@@ -69,6 +69,7 @@ content.style.height = contentHeight + "px";
 
 accordeonTeam();
 
+////всплывающее окно в отзывах
 
 function popupReview() {
   const reviewList = document.querySelector('.reviews__list');
@@ -103,6 +104,7 @@ function renderPopup(title,text) {
 
 popupReview();
 
+////аккордеон горизонтальный
 
 function accordeonMenu() {
   const menuItems = document.querySelectorAll(".menu-page__item ");
@@ -141,7 +143,7 @@ function accordeonMenu() {
   };
   
   accordeonMenu();
-
+//////
 
   function burgerSlider() {
     const slider = document.querySelector(".slider__list");
@@ -164,115 +166,143 @@ function accordeonMenu() {
 burgerSlider();
 
 
-//
-const sections = $(".page");
-const display = $(".maincontent");
-;
-let inscroll = false;
-const md = new MobileDetect(window.navigator.userAgent);
-const isMobile = md.mobile();
+//ops
+let onePageScroll = () =>{
+    const wrapper = document.querySelector('.wrapper');
+    const content = wrapper.querySelector('.maincontent');
+    const pages = content.querySelectorAll('.page');
+    const points = document.querySelectorAll('.pagination__item');
+    const dataScrollto = document.querySelectorAll('[data-scroll-to]');
+    
+    let inScroll = false;
 
-const countPosition = sectionEq => {
- return `${sectionEq * (-100)}%`;
-}
-
-const switchActiveClass = (elems, elemEq) => {
-elems
-.eq(elemEq)
-.addClass("is-active")
-.siblings()
-.removeClass("is-active")
-}
-
-const performTransition = sectionEq => {
-if(inscroll) return;
-inscroll = true; 
-const position = countPosition(sectionEq);
-
-const switchMenuActiveClass = () => {
- switchActiveClass($(".pagination__item"), sectionEq); 
-}
-
-switchMenuActiveClass();
-switchActiveClass(sections, sectionEq);
-
-
-
-display.css({
-  transform: `translateY(${position})`});
-  setTimeout(()=>{
-    inscroll = false;
-  },1000 + 300);
-};
-
-const scrollViewport = direction =>{
-
-  const activeSection = sections.filter('.is-active');
-  const nextSection = activeSection.next();
-  const prevSection = activeSection.prev();
-
-  if(direction === "next" && nextSection.length){performTransition(nextSection.index());}
-  else if(direction === "prev" && prevSection.length){performTransition(prevSection.index());}
-}
-
-$(document).on('wheel', e=>{
-  const deltaY = e.originalEvent.deltaY;
-
-  if(deltaY > 0){
-    scrollViewport("next");
-  }
-  if(deltaY < 0){
+    if(isMobileDevice()) swipe();
+    
+    addNavigation();
+    wheel();
+    keyPush();
+    
+    function doTransition(pageNumber){
+      const position  = `${pageNumber * (-100)}%`;
+      
+      if(inScroll) return;
+      
+      inScroll = true;
+      
+      addClass(pages);
+      
+      content.style.transform = `translateY(${position})`;
+      
+      setTimeout(() => {
+        inScroll = false;
+        addClass(points);
+      }, 900);
+      
+      function addClass(arr){
+        arr[pageNumber].classList.add('is-active');
+        
+        for(const item of arr){
+          if(item != arr[pageNumber]){
+            item.classList.remove('is-active');
+          }
+        }
+      }
+    }
   
-    scrollViewport("prev");
+    function addNavigation(){
+      for(const point of dataScrollto){
+        point.addEventListener('click' , e=>{
+          e.preventDefault();
+          doTransition(point.dataset.scrollTo);
+        })
+      }
+    }
+    
+    function wheel() {
+      document.addEventListener('wheel', e => {
+        const direct = e.deltaY > 0 ? 'up' : 'down';
+        
+        scrollToPage(direct);
+      })
+    }
+    
+    function keyPush() {
+      document.addEventListener('keydown', e => {
+        switch (e.keyCode) {
+          case 40:
+          scrollToPage('up');
+            break;
+          case 38:
+          scrollToPage('down');
+            break;
+          default:
+            break;
+        }
+      })
+    }
+    
+    function definePage(arr){
+      for (let i = 0; i < arr.length; i++) {
+        let iter = arr[i];
+        if (iter.classList.contains('is-active')){
+          return {
+            iterIndex: i,
+            iterActive: iter,
+            iterNext: iter.nextElementSibling,
+            iterPrev: iter.previousElementSibling
+          }
+        }   
+      }
+    }
+    
+  
+    function scrollToPage(direct){
+      let page = definePage(pages);
+      
+      if (direct === 'up' && page.iterNext) {
+        let numPage = page.iterIndex + 1;
+        
+        doTransition(numPage);
+      }
+  
+      if (direct === 'down' && page.iterPrev) {
+        let numPage = page.iterIndex - 1;
+        doTransition(numPage);
+      }
+    }
+  }
+  
+  onePageScroll();
+  function swipe() {
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    document.addEventListener('touchstart', e=>{
+      touchStartY = e.changedTouches[0].screenY;
+    }, false )
+
+    wrapper.addEventListener('touchmove', e=>{
+      e.preventDefault();
+    })
+    document.addEventListener('touchend', e=>{
+      touchEndY = e.changedTouches[0].screenY;
+      let direct = swipeDirect();
+      scrollToPage(direct);
+    }, false )
+  }
+  function swipeDirect () {
+    let deltaY = touchStartY - touchEndY;
+    if(deltaY > 100) {
+      return 'up';
+    }
+    else if(deltaY < -100) {
+      return 'down';
+    }
   }
 
-});
-
-$(document).on('keydown', e=>{
-const tagName = e.target.tagName.toLowerCase();
-const userTypingInInputs = tagName === 'input' || tagName === 'textarea';
-if(userTypingInInputs) return;
- switch(e.keyCode) {
-    case 38:
-      scrollViewport("prev");
-      break;
-    case 40:
-      scrollViewport("next");
-      break;
-  } 
-});
-
-
-
-$('[data-scroll-to]').on('click' , e=>{
-e.preventDefault();
-const target = $(e.currentTarget).attr("data-scroll-to");
-
-performTransition(target);
-
-});
-
-$(window).on('touchmove', e=>e.preventDefault());
-
-if(isMobile === true){
-
-  $(window).swipe( {
-    swipe:function(event, direction) {
-
-    let scrollDirection;
-     
-    if(direction === up){
-      scrollDirection = "next";
-     }
-   else if(direction === down){
-     scrollDirection = "prev";
-    }
-
-scrollViewport(scrollDirection);
-    
-    }
-  });
-}
+  function isMobileDevice() {
+    return (typeof window.orientation !== undefined);
+  }
 
 
 ///
@@ -348,6 +378,8 @@ function createOverlay(overlayText) {
  return overlayElement;
 }
 
+/////яндекс-карта
+
 ymaps.ready(init);
 var placemarks = [
   {
@@ -414,6 +446,8 @@ var clusterer = new ymaps.Clusterer({});
 myMap.geoObjects.add(clusterer);
 clusterer.add(geoObjects);
 }
+
+////видео
 
 
 let video;
