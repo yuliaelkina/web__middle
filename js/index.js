@@ -269,12 +269,8 @@ let onePageScroll = () =>{
         let numPage = page.iterIndex - 1;
         doTransition(numPage);
       }
-    }
-  }
-  
-  onePageScroll();
-  
-   function swipe() {
+    } 
+    function swipe() {
       let touchStartY = 0;
       let touchEndY = 0;
       const wrapper = document.querySelector(".wrapper");
@@ -305,6 +301,11 @@ let onePageScroll = () =>{
     function isMobileDevice() {
       return (typeof window.orientation !== undefined);
     }
+  
+  }
+  
+  onePageScroll();
+  
   
   
 
