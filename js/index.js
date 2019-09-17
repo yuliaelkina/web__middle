@@ -105,7 +105,6 @@ function renderPopup(title,text) {
 popupReview();
 
 ////аккордеон горизонтальный
-
 function accordeonMenu() {
   const menuItems = document.querySelectorAll(".menu-page__item ");
   const menu = document.querySelector(".menu-page__list");
@@ -167,6 +166,7 @@ burgerSlider();
 
 
 //ops
+
 let onePageScroll = () =>{
     const wrapper = document.querySelector('.wrapper');
     const content = wrapper.querySelector('.maincontent');
@@ -175,8 +175,8 @@ let onePageScroll = () =>{
     const dataScrollto = document.querySelectorAll('[data-scroll-to]');
     
     let inScroll = false;
-
-    if(isMobileDevice()) swipe();
+  
+    if(isMobileDevice()){swipe()}
     
     addNavigation();
     wheel();
@@ -273,36 +273,41 @@ let onePageScroll = () =>{
   }
   
   onePageScroll();
-  function swipe() {
-    let touchStartY = 0;
-    let touchEndY = 0;
+  
+   function swipe() {
+      let touchStartY = 0;
+      let touchEndY = 0;
+      const wrapper = document.querySelector(".wrapper");
+  
+      document.addEventListener('touchstart', e=>{
+        touchStartY = e.changedTouches[0].screenY;
+      }, false);
+  
+      wrapper.addEventListener('touchmove', e=>{
+        e.preventDefault();
+      })
+      document.addEventListener('touchend', e=>{
+        touchEndY = e.changedTouches[0].screenY;
+        let direct = swipeDirect();
+        scrollToPage(direct);
+      }, false);
+    }
+    function swipeDirect () {
+      let deltaY = touchStartY - touchEndY;
+      if(deltaY > 100) {
+        return 'up';
+      }
+      else if(deltaY < -100) {
+        return 'down';
+      }
+    }
+  
+    function isMobileDevice() {
+      return (typeof window.orientation !== undefined);
+    }
+  
+  
 
-    document.addEventListener('touchstart', e=>{
-      touchStartY = e.changedTouches[0].screenY;
-    }, false )
-
-    wrapper.addEventListener('touchmove', e=>{
-      e.preventDefault();
-    })
-    document.addEventListener('touchend', e=>{
-      touchEndY = e.changedTouches[0].screenY;
-      let direct = swipeDirect();
-      scrollToPage(direct);
-    }, false )
-  }
-  function swipeDirect () {
-    let deltaY = touchStartY - touchEndY;
-    if(deltaY > 100) {
-      return 'up';
-    }
-    else if(deltaY < -100) {
-      return 'down';
-    }
-  }
-
-  function isMobileDevice() {
-    return (typeof window.orientation !== undefined);
-  }
 
 
 ///
